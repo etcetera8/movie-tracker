@@ -1,0 +1,5 @@
+.MovieContainer {
+  display: flex;
+  flex-direction: row;
+  background: rgba(100,100,255, 0.1);
+}
