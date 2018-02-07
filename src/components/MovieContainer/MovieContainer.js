@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import './MovieContainer.css';
+import Card from '../Card/Card';
 
-class MovieContainer extends Component {
- render() {
-   return (
-     <div>
-     FUCK YOU
-     </div>
-   )
- }
+export class MovieContainer extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  cardsArray = () => {
+    const moviesArray = this.props.movieArray.map((movie, index) => 
+      <Card movie={movie}
+            id={Date.now() + index}
+            key={index}
+       />
+    )
+    return moviesArray
+  }
+
+  render() {
+    return (
+      <div className="MovieContainer">
+        {this.cardsArray()}
+      </div>
+    )
+  }
 }
 
-export default MovieContainer;
+const mapStateToProps = (state) => {
+  return {
+    movieArray: state.movieArray
+  }
+}
+
+export default connect(mapStateToProps)(MovieContainer)
