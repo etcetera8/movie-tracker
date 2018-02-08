@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { validateUser } from '../../api.js';
-console.log(validateUser);
+import { getAllUsers, validateUser } from '../../api.js';
+
 export default class Login extends Component {
   constructor(props){
     super(props);
@@ -11,16 +11,25 @@ export default class Login extends Component {
   }
 
   handleChange=(e)=> {
-    this.setState({[e.target.name]:e.target.value})
+    const { name, value } = e.target;
+    this.setState({[name]:value})
   }
-
+  //if succesfull redirect'/'
+  //if fail alert username/password not found
   //'Taylor', 'password', 'tman2272@aol.com'
 
-  handleInput = (e) => {
+  handleInput = async (e) => {
     e.preventDefault();
-    validateUser()
-    //if succesfull redirect'/'
-    //if fail alert username/password not found
+    const userArray = await getAllUsers()
+    console.log('userArray', userArray);
+
+    const username = this.state.username
+    const password = this.state.password
+    console.log('login info: ', username, password)
+
+    const validate = await validateUser(username, password)
+    console.log('validate: ', validate)
+  
   }
 
   render() {

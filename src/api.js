@@ -8,15 +8,29 @@ export const apiMovieData = async (url) => {
  return data;
 }
 
-export const validateUser = async (data) => {
-    //console.log(getAllUsers);
+export const getAllUsers = async () => {
     const response = await fetch('http://localhost:3000/api/users', {
       method: 'GET',
-      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json'
       }
     })
-    console.log(response);
-    return response
+    const allUsers = await response.json()
+
+    return allUsers.data;
+}
+//'Taylor', 'password', 'tman2272@aol.com'
+export const validateUser = async (email, password) => {
+  const response = await fetch('http://localhost:3000/api/users', {
+    method: 'POST',
+    body: JSON.stringify({email: email, password: password}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  console.log('validate response: ', response)
+  const responseData = await response.json()
+  console.log('jsonified data: ', responseData)
+
+  //return responseData.data;
 }

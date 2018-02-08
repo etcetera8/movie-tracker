@@ -4,10 +4,6 @@ import './MovieContainer.css';
 import Card from '../Card/Card';
 
 export class MovieContainer extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   cardsArray = () => {
     const moviesArray = this.props.movieArray.map((movie, index) => 
       <Card movie={movie}

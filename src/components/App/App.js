@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { apiMovieData } from '../../api';
 import { cleanMovieData } from '../../cleaner';
-import { rootReducer } from '../../reducers/reducerIndex';
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { addMovieData } from '../../actions/actionIndex';
 import Main from '../Main/Main';
-import Header from '../Header/Header';
 import { withRouter } from 'react-router-dom'
 
 export class App extends Component {
