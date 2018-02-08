@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-
+import { validateUser } from '../../api.js';
+console.log(validateUser);
 export default class Login extends Component {
   constructor(props){
     super(props);
@@ -13,30 +14,13 @@ export default class Login extends Component {
     this.setState({[e.target.name]:e.target.value})
   }
 
+  //'Taylor', 'password', 'tman2272@aol.com'
+
   handleInput = (e) => {
     e.preventDefault();
-
-    //     fetch('/api/v1/groceries', {
-    //   method: 'POST',
-    //   body: JSON.stringify({ grocery }),
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   }
-    // })
-    // .then(response => response.json())
-    // .then(groceries => {
-    //   this.setState({
-    //     grocery: {
-    //       name: '',
-    //       quantity: '' 
-    //     }
-    //   }, updateGroceryList(groceries));
-    // })
-    // .catch(error => {
-    //   this.setState({
-    //     errorStatus: 'Error adding grocery'
-    //   })
-    // });
+    validateUser()
+    //if succesfull redirect'/'
+    //if fail alert username/password not found
   }
 
   render() {

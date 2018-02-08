@@ -8,7 +8,6 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import { withRouter } from 'react-router-dom'
 
-
 export class App extends Component {
  constructor(props) {
    super(props);
