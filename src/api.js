@@ -19,7 +19,7 @@ export const getAllUsers = async () => {
 
     return allUsers.data;
 }
-//'Taylor', 'password', 'tman2272@aol.com'
+
 export const validateUser = async (email, password) => {
   try {
     const response = await fetch('http://localhost:3000/api/users', {
@@ -37,4 +37,15 @@ export const validateUser = async (email, password) => {
     console.log('error')
     return {status: 'fail'}
   }
+}
+
+export const signUpUser = async (email, password, name ) => {
+  const response = await fetch('http://localhost:3000/api/users/new', {
+    method: 'POST',
+    body: JSON.stringify({email: email, password: password, name: name}),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  console.log(response);
 }
