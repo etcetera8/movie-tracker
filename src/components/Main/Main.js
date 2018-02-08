@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import MovieContainer from '../MovieContainer/MovieContainer';
-import Login from '../Login/Login';
+import { Login } from '../Login/Login';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
 
-class Main extends Component {
-  render() {
+const Main = () => {
     return (
       <div >
         <Route path = '/' component={Header} />
@@ -13,7 +12,6 @@ class Main extends Component {
         <Route exact path = '/login' component={Login} />
       </div>
     )
-  }
 }
 
 export default Main;

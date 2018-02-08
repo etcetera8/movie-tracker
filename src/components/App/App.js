@@ -4,7 +4,9 @@ import { cleanMovieData } from '../../cleaner';
 import { connect } from 'react-redux';
 import { addMovieData } from '../../actions/actionIndex';
 import Main from '../Main/Main';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+
+import Login from '../Login/Login';
 
 export class App extends Component {
  constructor(props) {

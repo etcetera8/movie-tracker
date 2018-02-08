@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import { getAllUsers, validateUser } from '../../api.js';
+import { connect } from 'react-redux';
+import { loginStatus } from '../../actions/actionIndex';
+import { withRouter } from 'react-router-dom';
 
-export default class Login extends Component {
+export class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -20,16 +23,22 @@ export default class Login extends Component {
 
   handleInput = async (e) => {
     e.preventDefault();
+    const { username, password } = this.state
     const userArray = await getAllUsers()
-    console.log('userArray', userArray);
-
-    const username = this.state.username
-    const password = this.state.password
-    console.log('login info: ', username, password)
-
     const validate = await validateUser(username, password)
-    console.log('validate: ', validate)
+
+    // console.log('userArray', userArray);
+    // console.log('login info: ', username, password)
+    // console.log('validate: ', validate)
   
+    console.log('props: ', this.props)
+
+    if(validate.status === 'success') {
+      this.props.handleLogin(true);
+    } else {
+      console.log('failed to login try again n00b')
+      this.props.handleLogin(false);
+    }
   }
 
   render() {
@@ -58,5 +67,16 @@ export default class Login extends Component {
       </div>
     )
   }
-
 }
+
+const mapState = (store) => {
+  debugger;
+  return {}
+}
+
+const mapDispatchToProps = (dispatch) => ({
+  handleLogin: (login) => dispatch(loginStatus(login))
+})
+
+export default withRouter(connect(mapState, mapDispatchToProps)(Login))
+
