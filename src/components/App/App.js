@@ -3,10 +3,12 @@ import { apiMovieData } from '../../api';
 import { cleanMovieData } from '../../cleaner';
 import { connect } from 'react-redux';
 import { addMovieData } from '../../actions/actionIndex';
-import Main from '../Main/Main';
-import { withRouter } from 'react-router-dom';
+//import { Main } from '../Main/Main';
 
-import Login from '../Login/Login';
+import MovieContainer from '../MovieContainer/MovieContainer';
+import  Login  from '../Login/Login';
+import { Route, Redirect, withRouter } from 'react-router-dom';
+import Header from '../Header/Header';
 
 export class App extends Component {
  constructor(props) {
@@ -33,14 +35,18 @@ export class App extends Component {
  render() {
    return (
      <div>
-       <Main />
+        <Route path = '/' component={Header} />
+        <Route exact path = '/' component={MovieContainer} />
+        <Route path = '/login' render={() => !this.props.loginStatus ? (<Login />) : <Redirect to='/' /> } />
      </div>
    )
  }
 }
 
-const mapState = (store) => ({
- movieFromStore: store.movieArray
+const mapState = (state) => ({
+ movieFromStore: state.movieArray,
+ loginStatus: state.loginStatus
+
 });
 
 const mapDispatchToProps = (dispatch) => ({

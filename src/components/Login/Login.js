@@ -26,19 +26,18 @@ export class Login extends Component {
     const { username, password } = this.state
     const userArray = await getAllUsers()
     const validate = await validateUser(username, password)
-
-    // console.log('userArray', userArray);
-    // console.log('login info: ', username, password)
-    // console.log('validate: ', validate)
   
-    console.log('props: ', this.props)
-
     if(validate.status === 'success') {
       this.props.handleLogin(true);
+      this.setState({username: '', password: ''})
+      
     } else {
       console.log('failed to login try again n00b')
+
       this.props.handleLogin(false);
     }
+
+
   }
 
   render() {
@@ -70,7 +69,6 @@ export class Login extends Component {
 }
 
 const mapState = (store) => {
-  debugger;
   return {}
 }
 
