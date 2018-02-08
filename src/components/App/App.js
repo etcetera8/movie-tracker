@@ -4,7 +4,9 @@ import { cleanMovieData } from '../../cleaner';
 import { rootReducer } from '../../reducers/reducerIndex';
 import { connect, dispatch } from 'react-redux';
 import { addMovieData } from '../../actions/actionIndex';
-import MovieContainer from '../MovieContainer/MovieContainer';
+import Main from '../Main/Main';
+import Header from '../Header/Header';
+import { withRouter } from 'react-router-dom'
 
 
 export class App extends Component {
@@ -32,12 +34,7 @@ export class App extends Component {
  render() {
    return (
      <div>
-       <h1>Movie Watcher</h1>
-       {
-       this.props.movieFromStore.length > 0 &&
-       <MovieContainer />
-       }
-       
+       <Main />
      </div>
    )
  }
@@ -51,4 +48,4 @@ const mapDispatchToProps = (dispatch) => ({
  getMovieData: (data) => dispatch(addMovieData(data))
 });
 
-export default connect(mapState, mapDispatchToProps)(App);
+export default withRouter(connect(mapState, mapDispatchToProps)(App));
