@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { apiMovieData } from '../../api';
 import { cleanMovieData } from '../../cleaner';
-import { rootReducer } from '../../reducers/reducerIndex';
-import { connect, dispatch } from 'react-redux';
-import { addMovieData } from '../../actions/actionIndex';
-import Main from '../Main/Main';
-import Header from '../Header/Header';
-import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { addMovieData, logoutUser } from '../../actions/actionIndex';
+//import { Main } from '../Main/Main';
 
+import MovieContainer from '../MovieContainer/MovieContainer';
+import  Login  from '../Login/Login';
+import { Route, Redirect, withRouter } from 'react-router-dom';
+import Header from '../Header/Header';
 
 export class App extends Component {
  constructor(props) {
@@ -31,21 +32,35 @@ export class App extends Component {
    return cleanData;
  }
 
+ signOut = async () => {
+  console.log(this.props.loginStatus);
+  await this.props.logoutUser(false)
+  console.log(this.props.loginStatus);
+ }
+
  render() {
    return (
      <div>
-       <Main />
+     { this.props.loginStatus &&
+        <button onClick={this.signOut}>Sign Out</button>
+     }
+        <Route path = '/' component={Header} />
+        <Route exact path = '/' component={MovieContainer} />
+        <Route path = '/login' render={() => !this.props.loginStatus ? (<Login />) : <Redirect to='/' /> } />
      </div>
    )
  }
 }
 
-const mapState = (store) => ({
- movieFromStore: store.movieArray
+const mapState = (state) => ({
+ movieFromStore: state.movieArray,
+ loginStatus: state.loginStatus
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
- getMovieData: (data) => dispatch(addMovieData(data))
+ getMovieData: (data) => dispatch(addMovieData(data)),
+ logoutUser: (login) => dispatch(logoutUser(login))
 });
 
 export default withRouter(connect(mapState, mapDispatchToProps)(App));
