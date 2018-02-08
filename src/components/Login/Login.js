@@ -3,7 +3,7 @@ import { getAllUsers, validateUser } from '../../api.js';
 import { connect } from 'react-redux';
 import { loginStatus } from '../../actions/actionIndex';
 import { withRouter } from 'react-router-dom';
-
+import { SignUp } from '../SignUp/SignUp'
 export class Login extends Component {
   constructor(props){
     super(props);
@@ -17,8 +17,6 @@ export class Login extends Component {
     const { name, value } = e.target;
     this.setState({[name]:value})
   }
-  //if succesfull redirect'/'
-  //if fail alert username/password not found
   //'Taylor', 'password', 'tman2272@aol.com'
 
   handleInput = async (e) => {
@@ -30,7 +28,7 @@ export class Login extends Component {
     if(validate.status === 'success') {
       this.props.handleLogin(true);
       this.setState({username: '', password: ''})
-      
+
     } else {
       console.log('failed to login try again n00b')
 
@@ -63,6 +61,7 @@ export class Login extends Component {
             type="submit">login
           </button>
         </form>
+        <SignUp />
       </div>
     )
   }
