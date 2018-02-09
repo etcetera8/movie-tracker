@@ -30,7 +30,7 @@ export const validateUser = async (email, password) => {
       }
     })
     const validation = await response.json()
-    
+
     return validation
 
   } catch(error) {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { signUpUser } from '../../api.js';
+import { signUpUser, getAllUsers } from '../../api.js';
 
 export class SignUp extends Component {
   constructor() {
@@ -11,15 +11,18 @@ export class SignUp extends Component {
     }
   }
 
-  handleChange=(e)=> {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({[name]:value})
   }
 
-  handleSignUp=(e)=> {
+  handleSignUp = async (e) => {
     e.preventDefault();
     const { name, email, password } = this.state;
-    signUpUser(email, password, name)
+    const userArray = await getAllUsers()
+    const existing = await userArray.find(user => user.email === email);
+
+    !existing ? signUpUser(email, password, name) : console.log('already in use')
   }
 
   render () {
