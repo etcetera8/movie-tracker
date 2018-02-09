@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { getAllUsers, validateUser } from '../../api.js';
 import { connect } from 'react-redux';
 import { loginStatus } from '../../actions/actionIndex';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
 import { SignUp } from '../SignUp/SignUp';
 class Login extends Component {
   constructor(props){
@@ -21,7 +21,7 @@ class Login extends Component {
   handleInput = async (e) => {
     e.preventDefault();
     const { username, password } = this.state;
-    const userArray = await getAllUsers();
+    //const userArray = await getAllUsers();
     const validate = await validateUser(username, password);
 
     if(validate.status === 'success') {

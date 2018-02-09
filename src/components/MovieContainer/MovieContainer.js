@@ -9,9 +9,19 @@ export class MovieContainer extends Component {
       <Card movie={movie}
             id={Date.now() + index}
             key={index}
+            handleFavorite={this.handleFavorite}
        />
     )
     return moviesArray
+  }
+
+  handleFavorite = () => {
+    console.log('props: ', this.props)
+    console.log('history: ', this.props.history.push)
+    
+    if (!this.props.loginStatus) {
+      this.props.history.push('login')
+    } //else statement to push fav if loggedIn
   }
 
   render() {
@@ -23,10 +33,9 @@ export class MovieContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    movieArray: state.movieArray
-  }
-}
+const mapStateToProps = ({movieArray, loginStatus}) => ({
+    movieArray,
+    loginStatus 
+  })
 
 export default connect(mapStateToProps)(MovieContainer)

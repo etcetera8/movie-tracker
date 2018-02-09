@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Route, Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { cleanMovieData } from '../../cleaner';
 import { apiMovieData } from '../../api';
 import { addMovieData, logoutUser } from '../../actions/actionIndex';
+
+//components:
+import Header from '../Header/Header'
 import Main from '../Main/Main';
 
 export class App extends Component {
- constructor(props) {
+  constructor(props) {
    super(props);
    this.state = {
      movieData: []
@@ -28,20 +31,22 @@ export class App extends Component {
    return cleanData;
  }
 
- signOut = async () => {
+  signOut = async () => {
   await this.props.logoutUser(false)
  }
 
- render() {
-   return (
-     <div>
-     { this.props.loginStatus &&
+  render() {
+    return (
+      <div>
+      { 
+        this.props.loginStatus &&
         <button onClick={this.signOut}>Sign Out</button>
-     }
+      }
+      <Header />
       <Main />
-     </div>
-   )
- }
+      </div>
+    )
+  }
 }
 
 const mapState = (state) => ({
