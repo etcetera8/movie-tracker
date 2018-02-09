@@ -5,10 +5,9 @@ const Header = () => {
   return(
     <header>
       <h1>Movie Tracker</h1>
-      <NavLink className='nav' to='/login'>Login/Sign-up</NavLink>
+      <NavLink className='nav' to='/login'>Login</NavLink>
     </header>
   )
-
 }
 
 export default Header;
