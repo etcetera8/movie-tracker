@@ -3,8 +3,8 @@ import { getAllUsers, validateUser } from '../../api.js';
 import { connect } from 'react-redux';
 import { loginStatus } from '../../actions/actionIndex';
 import { withRouter } from 'react-router-dom';
-import { SignUp } from '../SignUp/SignUp'
-export class Login extends Component {
+import { SignUp } from '../SignUp/SignUp';
+class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -15,27 +15,22 @@ export class Login extends Component {
 
   handleChange=(e)=> {
     const { name, value } = e.target;
-    this.setState({[name]:value})
+    this.setState({[name]:value});
   }
-  //'Taylor', 'password', 'tman2272@aol.com'
 
   handleInput = async (e) => {
     e.preventDefault();
-    const { username, password } = this.state
-    const userArray = await getAllUsers()
-    const validate = await validateUser(username, password)
-  
+    const { username, password } = this.state;
+    const userArray = await getAllUsers();
+    const validate = await validateUser(username, password);
+
     if(validate.status === 'success') {
       this.props.handleLogin(true);
       this.setState({username: '', password: ''})
-
     } else {
       console.log('failed to login try again n00b')
-
       this.props.handleLogin(false);
     }
-
-
   }
 
   render() {
@@ -43,20 +38,20 @@ export class Login extends Component {
       <div>
         <form type="submit">
           <input
-            name="username" 
-            type='text' 
+            name="username"
+            type='text'
             placeholder="User Name or E-mail"
             value={this.state.username}
             onChange={this.handleChange}
             />
-          <input 
+          <input
             name="password"
-            type='password' 
+            type='password'
             placeholder="Password"
             value={this.state.password}
-            onChange={this.handleChange} 
+            onChange={this.handleChange}
             />
-          <button 
+          <button
             onClick={this.handleInput}
             type="submit">login
           </button>
@@ -67,13 +62,8 @@ export class Login extends Component {
   }
 }
 
-const mapState = (store) => {
-  return {}
-}
-
 const mapDispatchToProps = (dispatch) => ({
   handleLogin: (login) => dispatch(loginStatus(login))
-})
+});
 
-export default withRouter(connect(mapState, mapDispatchToProps)(Login))
-
+export default connect(null, mapDispatchToProps)(Login);
