@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { getAllUsers, validateUser } from '../../api.js';
+import { getAllUsers, validateUser, getAllFavorites } from '../../api.js';
 import { connect } from 'react-redux';
-import { activeUserAction } from '../../actions/actionIndex';
+import { activeUserAction, addFavoriteAction } from '../../actions/actionIndex';
 //import { withRouter } from 'react-router-dom';
 import { SignUp } from '../SignUp/SignUp';
 class Login extends Component {
@@ -25,12 +25,19 @@ class Login extends Component {
     const validate = await validateUser(username, password);
 
     if(validate.status === 'success') {
+      debugger;
       this.props.handleLogin(validate.data);
-      this.setState({username: '', password: ''})
+      this.getFavorites(validate.data)
+      this.setState({username: '', password: ''});
     } else {
       console.log('failed to login try again n00b')
       //add fail message to DOM
     }
+  }
+
+  getFavorites = async (user) => {
+    const allFavs = await getAllFavorites(user.id);
+    this.props.addFavorite(allFavs.data);
   }
 
   render() {
@@ -62,8 +69,13 @@ class Login extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => ({
-  handleLogin: (user) => dispatch(activeUserAction(user)),
+const mapStateToProps = (state) => ({
+  activeUser: state.activeUser,
 });
 
-export default connect(null, mapDispatchToProps)(Login);
+const mapDispatchToProps = (dispatch) => ({
+  handleLogin: (user) => dispatch(activeUserAction(user)),
+  addFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

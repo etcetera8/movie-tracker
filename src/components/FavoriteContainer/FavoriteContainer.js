@@ -33,7 +33,7 @@ export class FavoriteContainer extends Component {
   }
 
   componentDidMount () {
-    this.getFavorites()
+    // this.getFavorites()
   }
 
   cardsArray () {
