@@ -51,7 +51,7 @@ export class App extends Component {
 
 const mapState = (state) => ({
  movieFromStore: state.movieArray,
- loginStatus: state.loginStatus
+ loginStatus: state.activeUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

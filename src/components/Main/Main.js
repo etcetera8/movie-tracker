@@ -20,7 +20,7 @@ export class Main extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  loginStatus: state.loginStatus
+  loginStatus: state.activeUser
 });
 
 export default withRouter(connect(mapStateToProps)(Main));

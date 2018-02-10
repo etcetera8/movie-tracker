@@ -23,16 +23,13 @@ class Login extends Component {
     const { username, password } = this.state;
     //const userArray = await getAllUsers();
     const validate = await validateUser(username, password);
-    console.log('validate', validate.data)
 
     if(validate.status === 'success') {
-      console.log('props: ', this.props)
-      //this.props.loginId(validate.data.id)
       this.props.handleLogin(validate.data);
       this.setState({username: '', password: ''})
     } else {
       console.log('failed to login try again n00b')
-      this.props.handleLogin(false);
+      //add fail message to DOM
     }
   }
 
