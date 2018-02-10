@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MovieContainer from '../MovieContainer/MovieContainer';
-import { FavoriteContainer } from '../FavoriteContainer/FavoriteContainer'
+import FavoriteContainer from '../FavoriteContainer/FavoriteContainer'
 import Login from '../Login/Login';
 
 export const Main = ({loginStatus}) => (

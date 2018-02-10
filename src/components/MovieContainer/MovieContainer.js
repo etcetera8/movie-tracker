@@ -6,11 +6,11 @@ import Card from '../Card/Card';
 
 export const MovieContainer = ({ movieArray, activeUser, history }) => {
   const cardsArray = () => {
-    const moviesArray = movieArray.map((movie, index) => 
+    const moviesArray = movieArray.map(movie => 
       <Card 
         movie={movie}
-        id={Date.now() + index}
-        key={index}
+        id={movie.movie_id}
+        key={movie.movie_id}
         handleFavorite={handleFavorite}
       /> )
     
@@ -30,7 +30,7 @@ export const MovieContainer = ({ movieArray, activeUser, history }) => {
 
     match.length > 0 ? 
       deleteFavorite(user_id, movie.movie_id ) : addFavorite(movie) 
-    }
+  }
 
   return (
     <div className="MovieContainer">
@@ -40,8 +40,8 @@ export const MovieContainer = ({ movieArray, activeUser, history }) => {
 }
 
 const mapStateToProps = ({movieArray, activeUser}) => ({
-    movieArray,
-    activeUser
-  })
+  movieArray,
+  activeUser
+})
 
 export default connect(mapStateToProps)(MovieContainer)

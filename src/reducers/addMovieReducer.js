@@ -1,4 +1,4 @@
-const addMovieReducer = (state = [], action) => {
+export const addMovieReducer = (state = [], action) => {
  switch (action.type) {
    case 'ADD_MOVIEDATA':
      return [...action.payload]
@@ -6,5 +6,3 @@ const addMovieReducer = (state = [], action) => {
    return state;
  }
 };
-
-export default addMovieReducer;

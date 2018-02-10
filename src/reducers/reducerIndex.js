@@ -1,4 +1,4 @@
-import addMovieReducer from './addMovieReducer';
+import { addMovieReducer } from './addMovieReducer';
 import { activeUserReducer } from './activeUserReducer';
 import { combineReducers } from 'redux';
 
