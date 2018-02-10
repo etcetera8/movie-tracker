@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addFavorite, getAllFavorites } from '../../api';
+import { addFavorite, getAllFavorites, deleteFavorite } from '../../api';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
@@ -25,8 +25,8 @@ export class MovieContainer extends Component {
 
       const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
       console.log("duplicate" , match);
-      if(match.length > 0) {
-        console.log('remove from faves');
+      if( match.length > 0) {
+        deleteFavorite(user_id, movie.movie_id )
       } else {
         addFavorite(movie) 
       }
