@@ -66,7 +66,9 @@ export const addFavorite = async (favMovieObject) => {
     vote_average, 
     overview
   } = favMovieObject
-  const response = await fetch('http://localhost:3000/api/users/favorites/new', {
+  console.log(favMovieObject);
+  
+  const response = await fetch('api/users/favorites/new', {
     method: 'POST',
     body: JSON.stringify(
       {
