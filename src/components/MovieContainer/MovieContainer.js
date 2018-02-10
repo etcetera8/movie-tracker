@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addFavorite } from '../../api';
+import { addFavorite, getAllFavorites, deleteFavorite } from '../../api';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
@@ -16,14 +16,23 @@ export class MovieContainer extends Component {
     return moviesArray
   }
 
-  handleFavorite = (movie) => {
-    console.log('props: ', this.props)
+  handleFavorite = async (movie) => {
     
-    if (!this.props.loginStatus) {
-      this.props.history.push('login')
+    if (this.props.activeUser) {
+      const user_id = this.props.activeUser.id
+      movie.user_id = user_id
+      const allFavs = await getAllFavorites(user_id);
+
+      const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
+      console.log("duplicate" , match);
+      if( match.length > 0) {
+        deleteFavorite(user_id, movie.movie_id )
+      } else {
+        addFavorite(movie) 
+      }
+
     } else {
-      console.log('movie', movie)
-      addFavorite(movie)
+      this.props.history.push('login')
     }
   }
 
@@ -36,9 +45,9 @@ export class MovieContainer extends Component {
   }
 }
 
-const mapStateToProps = ({movieArray, loginStatus}) => ({
+const mapStateToProps = ({movieArray, activeUser}) => ({
     movieArray,
-    loginStatus 
+    activeUser
   })
 
 export default connect(mapStateToProps)(MovieContainer)
