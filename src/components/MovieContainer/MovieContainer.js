@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addFavorite } from '../../api';
+import { addFavorite, getAllFavorites } from '../../api';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
@@ -16,15 +16,21 @@ export class MovieContainer extends Component {
     return moviesArray
   }
 
-  handleFavorite = (movie) => {
+  handleFavorite = async (movie) => {
     
     if (this.props.activeUser) {
       const user_id = this.props.activeUser.id
-      console.log(user_id);
       movie.user_id = user_id
-      
-      console.log('movie', movie)
-      addFavorite(movie)
+      const allFavs = await getAllFavorites(user_id);
+
+      const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
+      console.log("duplicate" , match);
+      if(match.length > 0) {
+        console.log('remove from faves');
+      } else {
+        addFavorite(movie) 
+      }
+
     } else {
       this.props.history.push('login')
     }

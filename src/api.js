@@ -41,7 +41,11 @@ export const signUpUser = async (email, password, name ) => {
     body: JSON.stringify({email, password, name}),
     headers: {'Content-Type': 'application/json'}
   })
-  console.log(response);
+}
+
+export const getAllFavorites = async (user_id) => {
+  const response = await fetch(`http://localhost:3000/api/users/${user_id}/favorites`)
+  return await response.json()
 }
 
 export const addFavorite = async (favMovieObject) => {

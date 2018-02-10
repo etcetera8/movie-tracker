@@ -1,6 +1,5 @@
 export const cleanMovieData = (data) => {
   const {results} = data;
-  console.log('results, ', results)
   const movieArray = results.map(async (movie) => {
     let {
       id, 
