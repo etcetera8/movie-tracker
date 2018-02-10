@@ -17,13 +17,16 @@ export class MovieContainer extends Component {
   }
 
   handleFavorite = (movie) => {
-    console.log('props: ', this.props)
     
-    if (!this.props.loginStatus) {
-      this.props.history.push('login')
-    } else {
+    if (this.props.activeUser) {
+      const user_id = this.props.activeUser.id
+      console.log(user_id);
+      movie.user_id = user_id
+      
       console.log('movie', movie)
       addFavorite(movie)
+    } else {
+      this.props.history.push('login')
     }
   }
 
@@ -36,9 +39,9 @@ export class MovieContainer extends Component {
   }
 }
 
-const mapStateToProps = ({movieArray, loginStatus}) => ({
+const mapStateToProps = ({movieArray, activeUser}) => ({
     movieArray,
-    loginStatus 
+    activeUser
   })
 
 export default connect(mapStateToProps)(MovieContainer)
