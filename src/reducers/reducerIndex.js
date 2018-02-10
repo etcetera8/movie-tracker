@@ -1,10 +1,10 @@
 import addMovieReducer from './addMovieReducer';
-import { loginStatusReducer } from './loginStatusReducer';
+import { activeUserReducer } from './activeUserReducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
   movieArray: addMovieReducer,
-  loginStatus: loginStatusReducer,
+  activeUser: activeUserReducer,
 });
 
 export default rootReducer;

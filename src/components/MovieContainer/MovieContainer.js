@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addFavorite } from '../../api';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
@@ -15,13 +16,15 @@ export class MovieContainer extends Component {
     return moviesArray
   }
 
-  handleFavorite = () => {
+  handleFavorite = (movie) => {
     console.log('props: ', this.props)
-    console.log('history: ', this.props.history.push)
     
     if (!this.props.loginStatus) {
       this.props.history.push('login')
-    } //else statement to push fav if loggedIn
+    } else {
+      console.log('movie', movie)
+      addFavorite(movie)
+    }
   }
 
   render() {
