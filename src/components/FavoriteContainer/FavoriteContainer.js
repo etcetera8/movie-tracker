@@ -1,17 +1,18 @@
-import React from 'react'
-import Card from '../Card/Card'
-import { connect } from 'react-redux'
-import { getAllFavorites, deleteFavorite, addFavorite } from '../../api'
+import React, { Component } from 'react';
+import Card from '../Card/Card';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { getAllFavorites, deleteFavorite, addFavorite } from '../../api';
+import { addFavoriteAction } from '../../actions/actionIndex';
 
-export const FavoriteContainer = ({ activeUser, history }) => {
-
-  console.log('activeUser: ', activeUser)
-  const handleFavorite = async (movie) => {
-    activeUser ? toggleFavorite(movie) : history.push('login')
+export class FavoriteContainer extends Component {
+  
+  handleFavorite = async (movie) => {
+    this.props.activeUser ? this.toggleFavorite(movie) : this.props.history.push('login')
   }
 
-  const toggleFavorite = async (movie) => {
-    const user_id = activeUser.id
+  toggleFavorite = async (movie) => {
+    const user_id = this.props.activeUser.id
     const allFavs = await getAllFavorites(user_id);
     const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
     
@@ -21,28 +22,42 @@ export const FavoriteContainer = ({ activeUser, history }) => {
       deleteFavorite(user_id, movie.movie_id ) : addFavorite(movie) 
   }
 
-  const cardsArray = async () => {
-    const allFavs = await getAllFavorites(activeUser.id);
-    const moviesArray = allFavs.data.map((movie) => 
+  getFavorites = async () => {
+    const allFavs = await getAllFavorites(this.props.activeUser.id);
+    this.props.addFavorite(allFavs.data);
+  }
+
+  componentDidMount () {
+    this.getFavorites()
+  }
+
+  cardsArray () {
+    return this.props.favoriteArray.map(movie => 
       <Card 
         movie={movie}
         id={movie.movie_id}
         key={movie.movie_id}
-        handleFavorite={handleFavorite}
-      /> )
-    
-    return moviesArray
+        handleFavorite={this.handleFavorite}
+      />
+    )
   }
-
-  return (
-    <div>
-      {cardsArray()}
-    </div>
-  )
+  
+  render () {
+    return (
+      <div>
+        {this.cardsArray()}
+      </div>
+    )
+  }
 }
 
 const mapState = (state) => ({
-  activeUser: state.activeUser
+  activeUser: state.activeUser,
+  favoriteArray: state.favoriteArray,
 })
 
-export default connect(mapState)(FavoriteContainer)
+const mapDispatch = (dispatch) => ({
+  addFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData)),
+})
+
+export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer))

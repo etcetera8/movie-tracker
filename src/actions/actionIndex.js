@@ -12,3 +12,8 @@ export const logoutUser = (login) => ({
   type: 'LOGOUT_USER',
   payload: login,
 })
+
+export const addFavoriteAction = (favoriteData) => ({
+  type: 'ADD_FAVORITE',
+  payload: favoriteData,
+})
