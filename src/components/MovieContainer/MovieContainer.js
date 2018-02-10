@@ -1,53 +1,47 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { addFavorite, getAllFavorites, deleteFavorite } from '../../api';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
-export class MovieContainer extends Component {
-  cardsArray = () => {
-    const moviesArray = this.props.movieArray.map((movie, index) => 
-      <Card movie={movie}
-            id={Date.now() + index}
-            key={index}
-            handleFavorite={this.handleFavorite}
-       />
-    )
+export const MovieContainer = ({ movieArray, activeUser, history }) => {
+  const cardsArray = () => {
+    const moviesArray = movieArray.map(movie => 
+      <Card 
+        movie={movie}
+        id={movie.movie_id}
+        key={movie.movie_id}
+        handleFavorite={handleFavorite}
+      /> )
+    
     return moviesArray
   }
 
-  handleFavorite = async (movie) => {
+  const handleFavorite = async (movie) => {
+    activeUser ? toggleFavorite(movie) : history.push('login')
+  }
+
+  const toggleFavorite = async (movie) => {
+    const user_id = activeUser.id
+    const allFavs = await getAllFavorites(user_id);
+    const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
     
-    if (this.props.activeUser) {
-      const user_id = this.props.activeUser.id
-      movie.user_id = user_id
-      const allFavs = await getAllFavorites(user_id);
+    movie.user_id = user_id
 
-      const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
-      console.log("duplicate" , match);
-      if( match.length > 0) {
-        deleteFavorite(user_id, movie.movie_id )
-      } else {
-        addFavorite(movie) 
-      }
-
-    } else {
-      this.props.history.push('login')
-    }
+    match.length > 0 ? 
+      deleteFavorite(user_id, movie.movie_id ) : addFavorite(movie) 
   }
 
-  render() {
-    return (
-      <div className="MovieContainer">
-        {this.cardsArray()}
-      </div>
-    )
-  }
+  return (
+    <div className="MovieContainer">
+      {cardsArray()}
+    </div>
+  )
 }
 
 const mapStateToProps = ({movieArray, activeUser}) => ({
-    movieArray,
-    activeUser
-  })
+  movieArray,
+  activeUser
+})
 
 export default connect(mapStateToProps)(MovieContainer)
