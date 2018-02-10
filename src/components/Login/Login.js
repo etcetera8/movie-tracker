@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { getAllUsers, validateUser } from '../../api.js';
 import { connect } from 'react-redux';
-import { loginStatus } from '../../actions/actionIndex';
-import { withRouter } from 'react-router-dom';
+import { activeUserAction } from '../../actions/actionIndex';
+//import { withRouter } from 'react-router-dom';
 import { SignUp } from '../SignUp/SignUp';
 class Login extends Component {
   constructor(props){
@@ -18,18 +18,18 @@ class Login extends Component {
     this.setState({[name]:value});
   }
 
-  handleInput = async (e) => {
+  handleLoginAttempt = async (e) => {
     e.preventDefault();
     const { username, password } = this.state;
-    const userArray = await getAllUsers();
+    //const userArray = await getAllUsers();
     const validate = await validateUser(username, password);
 
     if(validate.status === 'success') {
-      this.props.handleLogin(true);
+      this.props.handleLogin(validate.data);
       this.setState({username: '', password: ''})
     } else {
       console.log('failed to login try again n00b')
-      this.props.handleLogin(false);
+      //add fail message to DOM
     }
   }
 
@@ -52,7 +52,7 @@ class Login extends Component {
             onChange={this.handleChange}
             />
           <button
-            onClick={this.handleInput}
+            onClick={this.handleLoginAttempt}
             type="submit">login
           </button>
         </form>
@@ -63,7 +63,7 @@ class Login extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  handleLogin: (login) => dispatch(loginStatus(login))
+  handleLogin: (user) => dispatch(activeUserAction(user)),
 });
 
 export default connect(null, mapDispatchToProps)(Login);

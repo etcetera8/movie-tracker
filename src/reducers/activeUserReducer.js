@@ -1,6 +1,6 @@
-export const loginStatusReducer = (state = false, action) => {
+export const activeUserReducer = (state = null, action) => {
   switch(action.type) {
-    case 'LOGIN_STATUS':
+    case 'ACTIVE_USER':
       return action.payload;
     case 'LOGOUT_USER':
       return action.payload;
