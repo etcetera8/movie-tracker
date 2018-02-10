@@ -6,7 +6,8 @@ const Header = () => {
   return(
     <header>
       <h1>Movie Tracker</h1>
-      <NavLink className='nav' to='/login'>Login</NavLink>
+      <NavLink className="nav" to="/login">Login</NavLink>
+      <NavLink to="/favorites"><button>Show Favorites</button></NavLink>
     </header>
   )
 }
