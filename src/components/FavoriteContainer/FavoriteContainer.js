@@ -16,10 +16,15 @@ export class FavoriteContainer extends Component {
     const allFavs = await getAllFavorites(user_id);
     const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
     
-    movie.user_id = user_id
+    movie.user_id = user_id;
 
-    match.length > 0 ? 
-      deleteFavorite(user_id, movie.movie_id ) : addFavorite(movie) 
+    if (match.length > 0) {
+      const remaining = allFavs.data.filter(favMovie => favMovie.movie_id !== movie.movie_id)
+      deleteFavorite(user_id, movie.movie_id ) 
+      this.props.addFavorite(remaining)
+    } else {
+      addFavorite(movie)
+    }
   }
 
   getFavorites = async () => {
