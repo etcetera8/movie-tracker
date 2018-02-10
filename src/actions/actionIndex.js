@@ -4,7 +4,7 @@ export const addMovieData = (movieData) => ({
 });
 
 export const activeUserAction = (user) => ({
-  type: 'LOGIN_STATUS',
+  type: 'ACTIVE_USER',
   payload: user,
 })
 

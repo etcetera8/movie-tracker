@@ -28,7 +28,7 @@ class Login extends Component {
     if(validate.status === 'success') {
       console.log('props: ', this.props)
       //this.props.loginId(validate.data.id)
-      this.props.handleLogin(true);
+      this.props.handleLogin(validate.data);
       this.setState({username: '', password: ''})
     } else {
       console.log('failed to login try again n00b')
