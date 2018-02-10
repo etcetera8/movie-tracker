@@ -13,7 +13,7 @@ export const Main = ({loginStatus}) => (
     />
     <Route 
       path="/favorites"
-      component={FavoriteContainer}
+      render={() => (loginStatus ? <FavoriteContainer /> : <Login />)}
     />
     <Route 
       path="/login" 
