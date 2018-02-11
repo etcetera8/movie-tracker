@@ -4,7 +4,8 @@ import './Card.css'
 const Card = ({ movie , id, handleFavorite, addClass }) => {
   const {title, vote_average, vote_count, overview, poster_path} = movie;
   return (
-    <article  id={id}
+    <article 
+      id={id}
       className={`MovieCard ${addClass}`}
       ontouchstart="this.classList.toggle('hover')">
         <div className="MovieCard-front">

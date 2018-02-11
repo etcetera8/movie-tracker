@@ -42,7 +42,6 @@ export class App extends Component {
 }
 
 const mapState = (state) => ({
- movieFromStore: state.movieArray,
  loginStatus: state.activeUser
 });
 

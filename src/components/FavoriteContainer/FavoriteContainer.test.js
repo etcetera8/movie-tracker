@@ -1,20 +1,21 @@
 import React from 'react';
-import { App } from './App';
+import { FavoriteContainer } from './FavoriteContainer';
 import { shallow } from 'enzyme';
 import { cleanMovieArray, userData } from '../../mock-data.js';
 
-describe('App', () => {
+describe('FavoriteContainer', () => {
   let wrapper;
+  const mockFunction = jest.fn();
   
   beforeEach( () => {
     wrapper = shallow(
-      <App
-        loginStatus={userData}
+      <FavoriteContainer 
+        favoriteArray={cleanMovieArray}
+        activeUser={userData}
       />);
   });
 
   it('should match the snapshot test', () => {
-    console.log(wrapper.debug())
     expect(wrapper).toMatchSnapshot();
   });
 });

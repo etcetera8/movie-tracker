@@ -1,20 +1,17 @@
 import React from 'react';
-import { App } from './App';
+import { SignUp } from './SignUp';
 import { shallow } from 'enzyme';
-import { cleanMovieArray, userData } from '../../mock-data.js';
+import { userData } from '../../mock-data.js';
 
-describe('App', () => {
+describe('SignUp', () => {
   let wrapper;
   
   beforeEach( () => {
     wrapper = shallow(
-      <App
-        loginStatus={userData}
-      />);
+      <SignUp />);
   });
 
   it('should match the snapshot test', () => {
-    console.log(wrapper.debug())
     expect(wrapper).toMatchSnapshot();
   });
 });
