@@ -10,7 +10,7 @@ export class MovieContainer extends Component {
     super(props)
     this.state = {}
   }
-  
+
   cardsArray = () => {
     const { movieArray, favoriteArray } = this.props
     const allMovies = movieArray.map(movie => {
@@ -18,16 +18,16 @@ export class MovieContainer extends Component {
       const favorite = allId.includes(movie.movie_id) ? 'favorited' : ''
 
       return (
-        <Card 
+        <Card
           addClass={favorite}
           movie={movie}
           id={movie.movie_id}
           key={movie.movie_id}
           handleFavorite={this.handleFavorite}
-        /> 
+        />
       )
     })
-    
+
     return allMovies
   }
 
@@ -45,15 +45,15 @@ export class MovieContainer extends Component {
 
     movie.user_id = user_id //added for backend purposes
 
-    match.length > 0 ? 
-      await deleteFavorite(user_id, movie.movie_id ) : await addFavorite(movie) 
+    match.length > 0 ?
+      await deleteFavorite(user_id, movie.movie_id ) : await addFavorite(movie)
 
     this.getFavorites(user_id) //update store, trigger css rerender
   }
 
   getFavorites = async (user) => {
     const allFavs = await getAllFavorites(user);
-    this.props.addFavorite(allFavs.data); 
+    this.props.addFavorite(allFavs.data);
   }
 
   render() {

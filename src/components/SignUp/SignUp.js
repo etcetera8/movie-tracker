@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { signUpUser, getAllUsers } from '../../api.js';
+import './SignUp.css';
 
 export class SignUp extends Component {
   constructor() {
@@ -7,7 +8,8 @@ export class SignUp extends Component {
     this.state = {
       name: '',
       email: '',
-      password:''
+      password:'',
+      errorStatus: false
     }
   }
 
@@ -22,10 +24,18 @@ export class SignUp extends Component {
     const userArray = await getAllUsers();
     const existing = await userArray.find(user => user.email === email);
 
-    !existing ? signUpUser(email, password, name) : console.log('email already in use')
+    !existing ? signUpUser(email, password, name) : this.emailTaken(true);
+    return existing
+  }
+
+  emailTaken = (warning) => {
+    if (warning) {
+      this.setState({errorStatus: true})
+    }
   }
 
   render () {
+    console.log(this.emailTaken());
     return (
       <div>
         <form type="submit">
@@ -37,6 +47,7 @@ export class SignUp extends Component {
             placeholder="Enter your name"
           />
           <input
+            className={!this.state.errorStatus ? "" : "error"}
             value={this.state.email}
             onChange={this.handleChange}
             name="email"
@@ -56,6 +67,10 @@ export class SignUp extends Component {
             Sign Up
           </button>
         </form>
+       
+       { this.state.errorStatus && 
+        <p className="login-error">Sorry, an account with this e-mail already exists</p>
+       }
       </div>
     )
   }
