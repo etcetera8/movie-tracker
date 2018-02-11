@@ -10,7 +10,7 @@ export class FavoriteContainer extends Component {
   handleFavorite = async (movie) => {
     this.props.activeUser ? this.toggleFavorite(movie) : this.props.history.push('login')
   }
-
+  //need to grab favorites from store instead of fetch call
   toggleFavorite = async (movie) => {
     const user_id = this.props.activeUser.id
     const allFavs = await getAllFavorites(user_id);
@@ -30,10 +30,6 @@ export class FavoriteContainer extends Component {
   getFavorites = async () => {
     const allFavs = await getAllFavorites(this.props.activeUser.id);
     this.props.addFavorite(allFavs.data);
-  }
-
-  componentDidMount () {
-    // this.getFavorites()
   }
 
   cardsArray () {
