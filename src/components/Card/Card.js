@@ -1,10 +1,10 @@
 import React from 'react';
 import './Card.css'
 
-const Card = ({ movie , id, handleFavorite }) => {
+const Card = ({ movie , id, handleFavorite, addClass }) => {
   const {title, vote_average, vote_count, overview, poster_path} = movie;
   return (
-    <div id={id} className="MovieCard">
+    <div id={id} className={`MovieCard ${addClass}`}>
       <h1 className="movie-title">{title}</h1>
       <button 
         className="favorite-btn"
