@@ -1,0 +1,8 @@
+.error {
+  border: 1px solid red;
+}
+
+.login-error {
+  font-size: .8em;
+  color: red;
+}
