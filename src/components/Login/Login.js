@@ -25,7 +25,6 @@ class Login extends Component {
     const validate = await validateUser(username, password);
 
     if(validate.status === 'success') {
-      debugger;
       this.props.handleLogin(validate.data);
       this.getFavorites(validate.data)
       this.setState({username: '', password: ''});

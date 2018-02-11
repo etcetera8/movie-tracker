@@ -4,10 +4,11 @@ import { addFavorite, getAllFavorites, deleteFavorite } from '../../api';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
-export const MovieContainer = ({ movieArray, activeUser, history }) => {
+export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history }) => {
   const cardsArray = () => {
     const moviesArray = movieArray.map(movie => 
       <Card 
+        className={favorited(movie)}
         movie={movie}
         id={movie.movie_id}
         key={movie.movie_id}
@@ -15,6 +16,15 @@ export const MovieContainer = ({ movieArray, activeUser, history }) => {
       /> )
     
     return moviesArray
+  }
+
+  const favorited = (movie) => {
+    // console.log('favarray', this.props.favoriteArray);
+    console.log('movie', movie);
+    console.log(favoriteArray);
+    
+    
+    favoriteArray.includes(movie) ? "favorited" : ""
   }
 
   const handleFavorite = async (movie) => {
@@ -39,9 +49,10 @@ export const MovieContainer = ({ movieArray, activeUser, history }) => {
   )
 }
 
-const mapStateToProps = ({movieArray, activeUser}) => ({
+const mapStateToProps = ({movieArray, activeUser, favoriteArray}) => ({
   movieArray,
-  activeUser
+  activeUser,
+  favoriteArray,
 })
 
 export default connect(mapStateToProps)(MovieContainer)
