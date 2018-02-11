@@ -6,25 +6,22 @@ import Card from '../Card/Card';
 
 export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history }) => {
   const cardsArray = () => {
-    const moviesArray = movieArray.map(movie => 
-      <Card 
-        className={favorited(movie)}
-        movie={movie}
-        id={movie.movie_id}
-        key={movie.movie_id}
-        handleFavorite={handleFavorite}
-      /> )
+    const moviesArray = movieArray.map(movie => {
+      const allId = favoriteArray.map(movie => movie.movie_id)
+      const favorite = allId.includes(movie.movie_id) ? 'favorited' : ''
+
+      return (
+        <Card 
+          addClass={favorite}
+          movie={movie}
+          id={movie.movie_id}
+          key={movie.movie_id}
+          handleFavorite={handleFavorite}
+        /> 
+      )
+    })
     
     return moviesArray
-  }
-
-  const favorited = (movie) => {
-    // console.log('favarray', this.props.favoriteArray);
-    console.log('movie', movie);
-    console.log(favoriteArray);
-    
-    
-    favoriteArray.includes(movie) ? "favorited" : ""
   }
 
   const handleFavorite = async (movie) => {
@@ -35,7 +32,7 @@ export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history 
     const user_id = activeUser.id
     const allFavs = await getAllFavorites(user_id);
     const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
-    
+
     movie.user_id = user_id
 
     match.length > 0 ? 
@@ -44,7 +41,9 @@ export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history 
 
   return (
     <div className="MovieContainer">
-      {cardsArray()}
+      {
+        cardsArray()
+      }
     </div>
   )
 }
