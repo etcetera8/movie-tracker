@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
+import './FavoriteContainer.css';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getAllFavorites, deleteFavorite, addFavorite } from '../../api';
 import { addFavoriteAction } from '../../actions/actionIndex';
 
 export class FavoriteContainer extends Component {
-  
+
   handleFavorite = async (movie) => {
     this.props.activeUser ? this.toggleFavorite(movie) : this.props.history.push('login')
   }
@@ -15,7 +16,7 @@ export class FavoriteContainer extends Component {
     const user_id = this.props.activeUser.id
     const allFavs = await getAllFavorites(user_id);
     const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
-    
+
     movie.user_id = user_id;
 
     if (match.length > 0) {
@@ -33,8 +34,8 @@ export class FavoriteContainer extends Component {
   }
 
   cardsArray () {
-    return this.props.favoriteArray.map(movie => 
-      <Card 
+    return this.props.favoriteArray.map(movie =>
+      <Card
         movie={movie}
         id={movie.movie_id}
         key={movie.movie_id}
@@ -42,12 +43,12 @@ export class FavoriteContainer extends Component {
       />
     )
   }
-  
+
   render () {
     return (
-      <div>
+      <section className="FavoriteContainer">
         {this.cardsArray()}
-      </div>
+      </section>
     )
   }
 }
