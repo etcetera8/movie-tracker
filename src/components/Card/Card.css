@@ -6,7 +6,9 @@
   width: 200px;
   height: 300px;
   background-color: rgba(255, 0, 0, 0.3);
+}
 
+.MovieCard-flipper {
   -webkit-transition: 0.6s;
 	-webkit-transform-style: preserve-3d;
 	-moz-transition: 0.6s;
@@ -18,7 +20,7 @@
   position: relative;
 }
 
-.MovieCard:hover {
+.MovieCard-flipper:hover {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
@@ -36,7 +38,7 @@
 }
 
 .MovieCard-front {
-  z-index: 2;
+  z-index: 1;
 }
 
 .MovieCard-back {
@@ -59,6 +61,10 @@ img {
   background: none;
   border: 1px solid yellow;
   color: yellow;
+}
+
+.favorite-btn:hover {
+  background: green;
 }
 
 .favorited {
