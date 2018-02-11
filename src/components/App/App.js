@@ -10,26 +10,18 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 
 export class App extends Component {
-  constructor(props) {
-   super(props);
-   this.state = {
-     movieData: []
-   }
- }
+  async componentDidMount() {
+    const movies = await this.getInitialData();
 
- async componentDidMount() {
-   const movies = await this.getInitialData();
+    await this.props.getMovieData(movies);
+  }
 
-   await this.props.getMovieData(movies);
- }
+  getInitialData = async () => {
+    const movieData = await apiMovieData();
+    const cleanData = await cleanMovieData(movieData);
 
- getInitialData = async () => {
-   const movieData = await apiMovieData();
-   const cleanData = await cleanMovieData(movieData);
-
-   this.setState({movieData: [...cleanData]})
-   return cleanData;
- }
+    return cleanData;
+  }
 
   render() {
     return (

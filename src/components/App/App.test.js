@@ -14,7 +14,17 @@ describe('App', () => {
   });
 
   it('should match the snapshot test', () => {
-    console.log(wrapper.debug())
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should fetch moviedata when getInitalData is called on load', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(data)
+    }))
+
+    wrapper.instance().getInitialData()
+    wrapper.update()
+
+    expect(window.fetch).toHaveBeenCalled()
+  })
 });

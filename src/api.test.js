@@ -20,7 +20,7 @@ describe('api calls', () => {
   });
 
   it('the api movieData returns data object once promise resolves', async () => {
-    const actual = await apiMovieData('');
+    const actual = await apiMovieData('www.imdb.com');
     expect(actual).toEqual(cleanMovieArray);
   });
 
@@ -52,7 +52,7 @@ describe('api calls', () => {
     }) 
 
     it('the validateUsers call should POST an object of one user with name and email to login', () => {
-
+      
 
     })
 
