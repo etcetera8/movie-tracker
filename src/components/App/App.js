@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { cleanMovieData } from '../../cleaner';
 import { apiMovieData } from '../../api';
 import { addMovieData } from '../../actions/actionIndex';
+import './App.css';
 
 //components:
 import Header from '../Header/Header';
