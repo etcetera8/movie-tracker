@@ -14,7 +14,6 @@ describe('App', () => {
   });
 
   it('should match the snapshot test', () => {
-    console.log(wrapper.debug())
     expect(wrapper).toMatchSnapshot();
   });
 });
