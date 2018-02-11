@@ -1,16 +1,14 @@
 import React from 'react';
-import { FavoriteContainer } from './FavoriteContainer';
+import { Main } from './Main';
 import { shallow } from 'enzyme';
-import { cleanMovieArray, userData } from '../../mock-data.js';
+import { userData } from '../../mock-data.js';
 
-describe('FavoriteContainer', () => {
+describe('Main', () => {
   let wrapper;
-  const mockFunction = jest.fn();
   
   beforeEach( () => {
     wrapper = shallow(
-      <FavoriteContainer 
-        favoriteArray={cleanMovieArray}
+      <Main
         activeUser={userData}
       />);
   });

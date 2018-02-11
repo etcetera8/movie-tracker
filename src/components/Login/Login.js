@@ -5,7 +5,7 @@ import { activeUserAction, addFavoriteAction } from '../../actions/actionIndex';
 import SignUp from '../SignUp/SignUp';
 import './Login.css';
 
-class Login extends Component {
+export class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
