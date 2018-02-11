@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 .MovieCard {
   margin: 20px;
@@ -7,6 +8,7 @@
   background-color: #000000;
   overflow-y: auto;
   color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }
 
 .MovieCard-flipper {
