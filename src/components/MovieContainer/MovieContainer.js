@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addFavorite, getAllFavorites, deleteFavorite } from '../../api';
+import { addFavoriteAction } from '../../actions/actionIndex';
 import './MovieContainer.css';
 import Card from '../Card/Card';
 
-export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history }) => {
-  const cardsArray = () => {
-    const moviesArray = movieArray.map(movie => {
+export class MovieContainer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  
+  cardsArray = () => {
+    const { movieArray, favoriteArray } = this.props
+    const allMovies = movieArray.map(movie => {
       const allId = favoriteArray.map(movie => movie.movie_id)
       const favorite = allId.includes(movie.movie_id) ? 'favorited' : ''
 
@@ -16,20 +23,24 @@ export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history 
           movie={movie}
           id={movie.movie_id}
           key={movie.movie_id}
-          handleFavorite={handleFavorite}
+          handleFavorite={this.handleFavorite}
         /> 
       )
     })
     
-    return moviesArray
+    return allMovies
   }
 
-  const handleFavorite = async (movie) => {
-    activeUser ? toggleFavorite(movie) : history.push('login')
+  handleFavorite = async (movie) => {
+    if (this.props.activeUser) {
+      this.toggleFavorite(movie)
+    } else {
+      this.props.history.push('login')
+    }
   }
 
-  const toggleFavorite = async (movie) => {
-    const user_id = activeUser.id
+  toggleFavorite = async (movie) => {
+    const user_id = this.props.activeUser.id
     const allFavs = await getAllFavorites(user_id);
     const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
 
@@ -37,15 +48,24 @@ export const MovieContainer = ({ favoriteArray, movieArray, activeUser, history 
 
     match.length > 0 ? 
       deleteFavorite(user_id, movie.movie_id ) : addFavorite(movie) 
+
+    this.getFavorites(user_id) //causes rerender for css toggle and updates store
   }
 
-  return (
-    <div className="MovieContainer">
-      {
-        cardsArray()
-      }
-    </div>
-  )
+  getFavorites = async (user) => {
+    const allFavs = await getAllFavorites(user);
+    this.props.addFavorite(allFavs.data); //triggering rerender but its flipped
+  }
+
+  render() {
+    return (
+      <div className="MovieContainer">
+        {
+          this.cardsArray()
+        }
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = ({movieArray, activeUser, favoriteArray}) => ({
@@ -54,4 +74,8 @@ const mapStateToProps = ({movieArray, activeUser, favoriteArray}) => ({
   favoriteArray,
 })
 
-export default connect(mapStateToProps)(MovieContainer)
+const mapDispatch = (dispatch) => ({
+  addFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData))
+})
+
+export default connect(mapStateToProps, mapDispatch)(MovieContainer)
