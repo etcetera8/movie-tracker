@@ -2,4 +2,8 @@
   display: flex;
   flex-direction: row;
   background: rgba(100,100,255, 0.1);
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
 }
