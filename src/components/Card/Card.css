@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 
 .MovieCard {
-  margin: 50px;
+  margin: 20px;
   border: 1px solid black;
-  min-width: 500px;
+  width: 200px;
+  height: 300px;
   background-color: rgba(255, 0, 0, 0.3);
 
   -webkit-transition: 0.6s;
@@ -45,12 +46,13 @@
 	transform: rotateY(180deg);
 }
 
-.movie-title {
-  margin: 10px auto;
-  max-width: 400px;
-  font-family: 'Fugaz One', cursive;
-  text-align: center;
+img {
+  height: 300px;
+  width: 200px;
+}
 
+.MovieCard button {
+  position: absolute;
 }
 
 .favorite-btn {

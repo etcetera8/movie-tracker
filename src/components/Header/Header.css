@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Fugaz+One');
+
+header h1 {
+  margin: 10px auto;
+  font-family: 'Fugaz One', cursive;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+header {
+  background-image: url('../../assets/header-lights.jpg');
+  background-size: cover;
+  height: 130px;
+  padding: 50px;
+}
