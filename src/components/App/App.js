@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { cleanMovieData } from '../../cleaner';
 import { apiMovieData } from '../../api';
-import { addMovieData, logoutUser } from '../../actions/actionIndex';
+import { addMovieData } from '../../actions/actionIndex';
 
 //components:
-import Header from '../Header/Header'
+import Header from '../Header/Header';
 import Main from '../Main/Main';
 
 export class App extends Component {
@@ -31,19 +31,11 @@ export class App extends Component {
    return cleanData;
  }
 
-  signOut = async () => {
-  await this.props.logoutUser(false)
- }
-
   render() {
     return (
       <div>
-      { 
-        this.props.loginStatus &&
-        <button onClick={this.signOut}>Sign Out</button>
-      }
-      <Header />
-      <Main />
+        <Header />
+        <Main />
       </div>
     )
   }
@@ -55,7 +47,6 @@ const mapState = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
  getMovieData: (data) => dispatch(addMovieData(data)),
- logoutUser: (login) => dispatch(logoutUser(login))
 });
 
 export default withRouter(connect(mapState, mapDispatchToProps)(App));
