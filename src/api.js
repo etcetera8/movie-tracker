@@ -34,7 +34,6 @@ export const validateUser = async (email, password) => {
     return validation
 
   } catch(error) {
-    console.log('error')
     return {status: 'fail'}
   }
 }

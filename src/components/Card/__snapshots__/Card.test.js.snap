@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot test 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
+    addClass={[MockFunction]}
+    handleFavorite={[MockFunction]}
+    id={5123}
+    movie={
+      Object {
+        "overview": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+        "posterImage": "https://image.tmdb.org/t/p/w500//eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+        "title": "Coco",
+        "vote_average": 7.7,
+        "vote_count": 1987,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="MovieCard-front"
+        >
+          <button
+            className="favorite-btn"
+            onClick={[Function]}
+          >
+            FAVORITE
+          </button>
+          <img
+            src={undefined}
+          />
+        </div>,
+        <div
+          className="MovieCard-back"
+        >
+          <h1
+            className="movie-title"
+          >
+            Coco
+          </h1>
+          <p
+            className="movie-overview"
+          >
+            Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+          </p>
+          <h4>
+            Vote Average: 
+            7.7
+          </h4>
+          <h4>
+            Votes :
+            1987
+          </h4>
+        </div>,
+      ],
+      "className": "MovieCard function () {
+        return fn.apply(this, arguments);
+      }",
+      "id": 5123,
+      "ontouchstart": "this.classList.toggle('hover')",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="favorite-btn"
+              onClick={[Function]}
+            >
+              FAVORITE
+            </button>,
+            <img
+              src={undefined}
+            />,
+          ],
+          "className": "MovieCard-front",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "FAVORITE",
+              "className": "favorite-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "FAVORITE",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "src": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h1
+              className="movie-title"
+            >
+              Coco
+            </h1>,
+            <p
+              className="movie-overview"
+            >
+              Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+            </p>,
+            <h4>
+              Vote Average: 
+              7.7
+            </h4>,
+            <h4>
+              Votes :
+              1987
+            </h4>,
+          ],
+          "className": "MovieCard-back",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Coco",
+              "className": "movie-title",
+            },
+            "ref": null,
+            "rendered": "Coco",
+            "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+              "className": "movie-overview",
+            },
+            "ref": null,
+            "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Vote Average: ",
+                7.7,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Vote Average: ",
+              7.7,
+            ],
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Votes :",
+                1987,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Votes :",
+              1987,
+            ],
+            "type": "h4",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="MovieCard-front"
+          >
+            <button
+              className="favorite-btn"
+              onClick={[Function]}
+            >
+              FAVORITE
+            </button>
+            <img
+              src={undefined}
+            />
+          </div>,
+          <div
+            className="MovieCard-back"
+          >
+            <h1
+              className="movie-title"
+            >
+              Coco
+            </h1>
+            <p
+              className="movie-overview"
+            >
+              Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+            </p>
+            <h4>
+              Vote Average: 
+              7.7
+            </h4>
+            <h4>
+              Votes :
+              1987
+            </h4>
+          </div>,
+        ],
+        "className": "MovieCard function () {
+        return fn.apply(this, arguments);
+      }",
+        "id": 5123,
+        "ontouchstart": "this.classList.toggle('hover')",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="favorite-btn"
+                onClick={[Function]}
+              >
+                FAVORITE
+              </button>,
+              <img
+                src={undefined}
+              />,
+            ],
+            "className": "MovieCard-front",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "FAVORITE",
+                "className": "favorite-btn",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "FAVORITE",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "src": undefined,
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h1
+                className="movie-title"
+              >
+                Coco
+              </h1>,
+              <p
+                className="movie-overview"
+              >
+                Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+              </p>,
+              <h4>
+                Vote Average: 
+                7.7
+              </h4>,
+              <h4>
+                Votes :
+                1987
+              </h4>,
+            ],
+            "className": "MovieCard-back",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Coco",
+                "className": "movie-title",
+              },
+              "ref": null,
+              "rendered": "Coco",
+              "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                "className": "movie-overview",
+              },
+              "ref": null,
+              "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Vote Average: ",
+                  7.7,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Vote Average: ",
+                7.7,
+              ],
+              "type": "h4",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Votes :",
+                  1987,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Votes :",
+                1987,
+              ],
+              "type": "h4",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

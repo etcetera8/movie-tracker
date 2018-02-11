@@ -1,4 +1,4 @@
-import { apiMovieData } from './api';
+import { apiMovieData, getAllUsers } from './api';
 import {key} from './apiKey';
 import { cleanMovieArray } from './mock-data.js'
 
@@ -38,9 +38,17 @@ describe('api calls', () => {
   
   describe('POST api fetches', () => {
 
-    it('the getAllUsers call should return an object with all the signed up users', () => {
-
-
+    it('the getAllUsers makes a fetch call', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return new Promise((resolve, reject) => {
+          resolve({
+            response: {results: []}
+          });
+        });
+      });
+      getAllUsers()
+      expect(window.fetch).toHaveBeenCalled();
+      //expect(getAllUsers()).toEqual({})
     }) 
 
     it('the validateUsers call should POST an object of one user with name and email to login', () => {

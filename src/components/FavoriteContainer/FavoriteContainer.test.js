@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from './Card';
+import FavoriteContainer from './FavoriteContainer';
 import { shallow } from 'enzyme';
-import { oneMovie } from '../../mock-data.js';
+import { cleanMovieArray } from '../../mock-data.js';
 
 describe('Card', () => {
   let wrapper;
@@ -9,15 +9,13 @@ describe('Card', () => {
   
   beforeEach( () => {
     wrapper = shallow(
-      <Card
-        movie={oneMovie}
-        id={5123}
-        handleFavorite={mockFunction}
-        addClass={mockFunction}
+      <FavoriteContainer 
+        favoriteArray={cleanMovieArray}
       />);
   });
 
   it('should match the snapshot test', () => {
-    expect(wrapper).toMatchSnapshot();
+    console.log(wrapper.debug());
+    //expect(wrapper).toMatchSnapshot();
   });
 });
