@@ -41,20 +41,19 @@ export class MovieContainer extends Component {
 
   toggleFavorite = async (movie) => {
     const user_id = this.props.activeUser.id
-    const allFavs = await getAllFavorites(user_id);
-    const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
+    const match = this.props.favoriteArray.filter(favMovie => favMovie.movie_id === movie.movie_id)
 
-    movie.user_id = user_id
+    movie.user_id = user_id //added for backend purposes
 
     match.length > 0 ? 
-      deleteFavorite(user_id, movie.movie_id ) : addFavorite(movie) 
+      await deleteFavorite(user_id, movie.movie_id ) : await addFavorite(movie) 
 
-    this.getFavorites(user_id) //causes rerender for css toggle and updates store
+    this.getFavorites(user_id) //update store, trigger css rerender
   }
 
   getFavorites = async (user) => {
     const allFavs = await getAllFavorites(user);
-    this.props.addFavorite(allFavs.data); //triggering rerender but its flipped
+    this.props.addFavorite(allFavs.data); 
   }
 
   render() {
