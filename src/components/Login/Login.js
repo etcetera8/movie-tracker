@@ -3,7 +3,7 @@ import { getAllUsers, validateUser, getAllFavorites } from '../../api.js';
 import { connect } from 'react-redux';
 import { activeUserAction, addFavoriteAction } from '../../actions/actionIndex';
 //import { withRouter } from 'react-router-dom';
-import { SignUp } from '../SignUp/SignUp';
+import SignUp from '../SignUp/SignUp';
 class Login extends Component {
   constructor(props){
     super(props);
@@ -21,7 +21,6 @@ class Login extends Component {
   handleLoginAttempt = async (e) => {
     e.preventDefault();
     const { username, password } = this.state;
-    //const userArray = await getAllUsers();
     const validate = await validateUser(username, password);
 
     if(validate.status === 'success') {

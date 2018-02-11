@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { activeUserAction } from '../../actions/actionIndex';
+import { validateUser } from '../../api.js';
 import { signUpUser, getAllUsers } from '../../api.js';
 import './SignUp.css';
 
@@ -21,11 +24,19 @@ export class SignUp extends Component {
   handleSignUp = async (e) => {
     e.preventDefault();
     const { name, email, password } = this.state;
-    const userArray = await getAllUsers();
-    const existing = await userArray.find(user => user.email === email);
+    const allUsers = await getAllUsers();
+    const userExists = await allUsers.find(user => user.email === email);
 
-    !existing ? signUpUser(email, password, name) : this.emailTaken(true);
-    return existing
+    if (userExists) {
+      this.emailTaken(true);
+    } else {
+      await signUpUser(email, password, name)
+      const validate = await validateUser(name, password);
+
+      this.props.handleLogin(validate.data)
+    }
+
+    return userExists
   }
 
   emailTaken = (warning) => {
@@ -35,7 +46,6 @@ export class SignUp extends Component {
   }
 
   render () {
-    console.log(this.emailTaken());
     return (
       <div>
         <form type="submit">
@@ -75,3 +85,9 @@ export class SignUp extends Component {
     )
   }
 }
+
+const mapDispatch = (dispatch) => ({
+  handleLogin: (user) => dispatch(activeUserAction(user)),
+})
+
+export default connect(null, mapDispatch)(SignUp)
