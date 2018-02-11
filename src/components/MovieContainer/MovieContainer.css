@@ -1,5 +1,8 @@
 .MovieContainer {
   display: flex;
-  flex-direction: row;
-  background: rgba(100,100,255, 0.1);
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: linear-gradient(#336E7B, black);
 }
