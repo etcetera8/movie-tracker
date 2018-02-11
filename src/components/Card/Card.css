@@ -46,8 +46,9 @@
 	transform: rotateY(180deg);
 }
 
-.MovieCard img {
-  height: 100%;
+img {
+  height: 300px;
+  width: 200px;
 }
 
 .MovieCard button {
