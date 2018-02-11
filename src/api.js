@@ -1,5 +1,4 @@
 import {key} from './apiKey';
-//import { getAllUsers } from '../../movietracker-backend/routes/queries.js'
 
 export const apiMovieData = async (url) => {
   try { 

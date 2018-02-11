@@ -27,12 +27,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <button
-          onClick={[Function]}
-        >
-          Sign Out
-        </button>,
-        <Header />,
+        <Connect(Header) />,
         <withRouter(Connect(Component)) />,
       ],
     },
@@ -41,19 +36,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Sign Out",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Sign Out",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {},
         "ref": null,
         "rendered": null,
@@ -78,12 +61,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <button
-            onClick={[Function]}
-          >
-            Sign Out
-          </button>,
-          <Header />,
+          <Connect(Header) />,
           <withRouter(Connect(Component)) />,
         ],
       },
@@ -92,19 +70,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Sign Out",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Sign Out",
-          "type": "button",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {},
           "ref": null,
           "rendered": null,

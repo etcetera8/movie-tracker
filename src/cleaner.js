@@ -1,6 +1,6 @@
 export const cleanMovieData = (data) => {
   const {results} = data;
-  const movieArray = results.map(async (movie) => {
+  const movieArray = results.map((movie) => {
     let {
       id, 
       title, 
@@ -11,7 +11,7 @@ export const cleanMovieData = (data) => {
       release_date
     } = movie;
     poster_path = `https://image.tmdb.org/t/p/w500/${poster_path}`
-    //${movie_id}, ${user_id}, ${title}, ${poster_path}, ${release_date}, ${vote_average}, ${overview}
+
     return {
       movie_id: id,
       title,
@@ -23,5 +23,5 @@ export const cleanMovieData = (data) => {
     }
   });
 
-  return Promise.all(movieArray);
+  return movieArray;
  }
