@@ -2,14 +2,16 @@ import React, {Component} from 'react';
 import { getAllUsers, validateUser, getAllFavorites } from '../../api.js';
 import { connect } from 'react-redux';
 import { activeUserAction, addFavoriteAction } from '../../actions/actionIndex';
-//import { withRouter } from 'react-router-dom';
 import SignUp from '../SignUp/SignUp';
+import './Login.css';
+
 class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      errorStatus: false
     }
   }
 
@@ -23,15 +25,17 @@ class Login extends Component {
     const { username, password } = this.state;
     const validate = await validateUser(username, password);
 
-    if(validate.status === 'success') {
+    if (validate.status === 'success') {
       this.props.handleLogin(validate.data);
       this.getFavorites(validate.data)
       this.setState({username: '', password: ''});
     } else {
       console.log('failed to login try again n00b')
-      //add fail message to DOM
+      this.setState({errorStatus: true})
     }
   }
+
+
 
   getFavorites = async (user) => {
     const allFavs = await getAllFavorites(user.id);
@@ -43,6 +47,7 @@ class Login extends Component {
       <div>
         <form type="submit">
           <input
+            className={!this.state.errorStatus ? "" : "error"}
             name="username"
             type='text'
             placeholder="User Name or E-mail"
@@ -50,6 +55,7 @@ class Login extends Component {
             onChange={this.handleChange}
             />
           <input
+            className={!this.state.errorStatus ? "" : "error"}
             name="password"
             type='password'
             placeholder="Password"
@@ -60,7 +66,11 @@ class Login extends Component {
             onClick={this.handleLoginAttempt}
             type="submit">login
           </button>
+          {this.state.errorStatus && 
+            <span className="login-error">E-mail or password do not match, try again</span>
+          }
         </form>
+
         <SignUp />
       </div>
     )

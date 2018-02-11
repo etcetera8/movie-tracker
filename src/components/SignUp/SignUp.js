@@ -40,9 +40,8 @@ export class SignUp extends Component {
   }
 
   emailTaken = (warning) => {
-    if (warning) {
-      this.setState({errorStatus: true})
-    }
+    warning ? 
+      this.setState({errorStatus: true}) : this.setState({errorStatus: false})
   }
 
   render () {
@@ -68,7 +67,7 @@ export class SignUp extends Component {
             value={this.state.password}
             onChange={this.handleChange}
             name="password"
-            type="text"
+            type="password"
             placeholder="Enter your password"
           />
           <button
