@@ -19,10 +19,10 @@ const Card = ({ movie , id, handleFavorite, addClass }) => {
           </div>
         </div>
         <button
-          className="favorite-btn"
+          className={`favorite-btn ${addClass}`}
           onClick={() => handleFavorite(movie)}>
-            <FontAwesome icon={faThumbsUp}/>
-          </button>
+            <FontAwesome icon={faThumbsUp} size='2x'/>
+        </button>
     </article>
   )
 }
