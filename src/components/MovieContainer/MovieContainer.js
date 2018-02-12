@@ -83,5 +83,5 @@ export default connect(mapStateToProps, mapDispatch)(MovieContainer)
 MovieContainer.propTypes = {
   favoriteArray: PropTypes.array.isRequired,
   activeUser: PropTypes.object,
-  addFavorite: PropTypes.func.isRequired
+  addFavorite: PropTypes.func
 };

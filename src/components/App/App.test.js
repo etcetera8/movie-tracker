@@ -7,10 +7,7 @@ describe('App', () => {
   let wrapper;
   
   beforeEach( () => {
-    wrapper = shallow(
-      <App
-        loginStatus={userData}
-      />);
+    wrapper = shallow( <App loginStatus={userData}/> );
   });
 
   it('should match the snapshot test', () => {

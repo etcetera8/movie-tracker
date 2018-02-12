@@ -13,6 +13,7 @@ ShallowWrapper {
         "password": "pass",
       }
     }
+    addFavorite={[MockFunction]}
     favoriteArray={
       Array [
         Object {
@@ -35,6 +36,8 @@ ShallowWrapper {
         },
       ]
     }
+    getFavorites={[MockFunction]}
+    handleFavorite={[MockFunction]}
     movieArray={
       Array [
         Object {
