@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { cleanMovieData } from '../../cleaner';
 import { apiMovieData } from '../../api';
 import { addMovieData } from '../../actions/actionIndex';
+import PropTypes from 'prop-types';
 
 //components:
 import Header from '../Header/Header';
@@ -42,3 +43,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(connect(mapState, mapDispatchToProps)(App));
+
+App.propTypes = {
+  getMovieData: PropTypes.func.isRequired,
+}

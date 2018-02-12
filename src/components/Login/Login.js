@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import { getAllUsers, validateUser, getAllFavorites } from '../../api.js';
+import { validateUser, getAllFavorites } from '../../api.js';
 import { connect } from 'react-redux';
 import { activeUserAction, addFavoriteAction } from '../../actions/actionIndex';
 import SignUp from '../SignUp/SignUp';
+import PropTypes from 'prop-types';
 import './Login.css';
 
 export class Login extends Component {
@@ -87,3 +88,8 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+Login.propTypes = {
+  addFavorite: PropTypes.func.isRequired ,
+  handleLogin: PropTypes.func.isRequired
+}

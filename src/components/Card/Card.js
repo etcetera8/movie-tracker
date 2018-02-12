@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Card.css'
 
 const Card = ({ movie , id, handleFavorite, addClass }) => {
@@ -7,12 +8,12 @@ const Card = ({ movie , id, handleFavorite, addClass }) => {
     <article 
       id={id}
       className={`MovieCard ${addClass}`}
-      ontouchstart="this.classList.toggle('hover')">
+      onTouchStart="this.classList.toggle('hover')">
         <div className="MovieCard-front">
           <button
             className="favorite-btn"
             onClick={() => handleFavorite(movie)}>FAVORITE</button>
-          <img src={poster_path} />
+          <img src={poster_path} alt="Movie Poster" />
         </div>
         <div className="MovieCard-back">
           <h1 className="movie-title">{title}</h1>
@@ -23,5 +24,12 @@ const Card = ({ movie , id, handleFavorite, addClass }) => {
     </article>
   )
 }
+
+Card.propTypes = {
+  movie: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
+  addClass: PropTypes.string,
+  handleFavorite: PropTypes.func.isRequired
+};
 
 export default Card;
