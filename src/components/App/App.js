@@ -47,5 +47,5 @@ const mapDispatchToProps = (dispatch) => ({
 export default withRouter(connect(mapState, mapDispatchToProps)(App));
 
 App.propTypes = {
-  getMovieData: PropTypes.func.isRequired,
+  getMovieData: PropTypes.func,
 }

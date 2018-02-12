@@ -27,7 +27,7 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Header) />,
+        <Connect(Component) />,
         <withRouter(Connect(Component)) />,
       ],
       "className": "App",
@@ -62,7 +62,7 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Header) />,
+          <Connect(Component) />,
           <withRouter(Connect(Component)) />,
         ],
         "className": "App",
