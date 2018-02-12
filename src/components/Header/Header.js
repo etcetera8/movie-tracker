@@ -35,7 +35,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Header.propTypes = {
-  loginStatus: PropTypes.object,
   logoutUser: PropTypes.func.isRequired
 }
 
