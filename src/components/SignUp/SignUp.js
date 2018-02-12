@@ -35,7 +35,7 @@ export class SignUp extends Component {
       await signUpUser(email, password, name)
       const validate = await validateUser(name, password);
 
-      this.props.handleLogin(validate.data)
+      setTimeout(() => this.props.handleLogin(validate.data), 500)
     }
 
     return userExists
