@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { activeUserReducer } from './activeUserReducer';
 import { addFavoriteReducer } from './addFavoriteReducer';
 import { addMovieReducer } from './addMovieReducer';
