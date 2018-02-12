@@ -28,11 +28,10 @@ export class Login extends Component {
 
     if (validate.status === 'success') {
       this.props.handleLogin(validate.data);
-      this.getFavorites(validate.data)
+      this.getFavorites(validate.data);
       this.setState({username: '', password: ''});
     } else {
-      console.log('failed to login try again n00b')
-      this.setState({errorStatus: true})
+      this.setState({errorStatus: true});
     }
   }
 
@@ -92,6 +91,6 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
 
 Login.propTypes = {
-  addFavorite: PropTypes.func.isRequired ,
-  handleLogin: PropTypes.func.isRequired
+  addFavorite: PropTypes.func,
+  handleLogin: PropTypes.func,
 }

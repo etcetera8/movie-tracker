@@ -8,8 +8,10 @@ describe('SignUp', () => {
   let wrapper;
 
   beforeEach( () => {
+    const mockFn = jest.fn();
+
     wrapper = shallow(
-      <SignUp />);
+      <SignUp handleLogin={mockFn}/>);
   });
 
   it('should match the snapshot test', () => {
@@ -25,5 +27,18 @@ describe('SignUp', () => {
     expect(wrapper.state().name).toEqual(mockEvent.target.value);
   });
 
-  it('handleSignUp should call getAllUsers')
+  it('emailTaken should update state to match the value it is given', () => {
+    const truthyValue = true;
+    const falsyValue = false;
+
+    wrapper.instance().emailTaken(truthyValue);
+    wrapper.update();
+
+    expect(wrapper.state().errorStatus).toEqual(true);
+
+    wrapper.instance().emailTaken(falsyValue);
+    wrapper.update();
+
+    expect(wrapper.state().errorStatus).toEqual(false);
+  });
 });
