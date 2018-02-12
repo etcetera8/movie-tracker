@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logoutUser } from '../../actions/actionIndex';
+import PropTypes from 'prop-types';
 import './Header.css'
 
 const Header = ({loginStatus, logoutUser}) => {
@@ -32,5 +33,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   logoutUser: (login) => dispatch(logoutUser(login)),
 });
+
+Header.propTypes = {
+  logoutUser: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

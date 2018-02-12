@@ -5,32 +5,26 @@ import { cleanMovieData } from '../../cleaner';
 import { apiMovieData } from '../../api';
 import { addMovieData } from '../../actions/actionIndex';
 import './App.css';
+import PropTypes from 'prop-types';
+
 
 //components:
 import Header from '../Header/Header';
 import Main from '../Main/Main';
 
 export class App extends Component {
-  constructor(props) {
-   super(props);
-   this.state = {
-     movieData: []
-   }
- }
+  async componentDidMount() {
+    const movies = await this.getInitialData();
 
- async componentDidMount() {
-   const movies = await this.getInitialData();
+    await this.props.getMovieData(movies);
+  }
 
-   await this.props.getMovieData(movies);
- }
+  getInitialData = async () => {
+    const movieData = await apiMovieData();
+    const cleanData = await cleanMovieData(movieData);
 
- getInitialData = async () => {
-   const movieData = await apiMovieData();
-   const cleanData = await cleanMovieData(movieData);
-
-   this.setState({movieData: [...cleanData]})
-   return cleanData;
- }
+    return cleanData;
+  }
 
   render() {
     return (
@@ -43,7 +37,6 @@ export class App extends Component {
 }
 
 const mapState = (state) => ({
- movieFromStore: state.movieArray,
  loginStatus: state.activeUser
 });
 
@@ -52,3 +45,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default withRouter(connect(mapState, mapDispatchToProps)(App));
+
+App.propTypes = {
+  getMovieData: PropTypes.func.isRequired,
+}

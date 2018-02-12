@@ -1,16 +1,14 @@
 import React from 'react';
-import { MovieContainer } from './MovieContainer';
+import { Login } from './Login';
 import { shallow } from 'enzyme';
-import { cleanMovieArray, userData } from '../../mock-data.js';
+import { userData } from '../../mock-data.js';
 
-describe('MovieContainer', () => {
+describe('Login', () => {
   let wrapper;
   
   beforeEach( () => {
     wrapper = shallow(
-      <MovieContainer
-        movieArray={cleanMovieArray} 
-        favoriteArray={cleanMovieArray}
+      <Login
         activeUser={userData}
       />);
   });

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { activeUserAction } from '../../actions/actionIndex';
 import { validateUser } from '../../api.js';
 import { signUpUser, getAllUsers } from '../../api.js';
+import PropTypes from 'prop-types';
 import './SignUp.css';
 
 export class SignUp extends Component {
@@ -91,4 +92,8 @@ const mapDispatch = (dispatch) => ({
   handleLogin: (user) => dispatch(activeUserAction(user)),
 })
 
-export default connect(null, mapDispatch)(SignUp)
+export default connect(null, mapDispatch)(SignUp);
+
+SignUp.propTypes = {
+  handleLogin: PropTypes.func.isRequired
+}

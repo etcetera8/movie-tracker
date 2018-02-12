@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Card.css'
 import FontAwesome from '@fortawesome/react-fontawesome';
 import faThumbsUp from '@fortawesome/fontawesome-free-solid/faThumbsUp';
@@ -26,5 +27,12 @@ const Card = ({ movie , id, handleFavorite, addClass }) => {
     </article>
   )
 }
+
+Card.propTypes = {
+  movie: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
+  addClass: PropTypes.string,
+  handleFavorite: PropTypes.func.isRequired
+};
 
 export default Card;

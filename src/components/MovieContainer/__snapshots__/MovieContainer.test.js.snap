@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieContainer should match the snapshot test 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <MovieContainer
+    activeUser={
+      Object {
+        "email": "bros@gmail.com",
+        "id": 2,
+        "name": "brophus park",
+        "password": "pass",
+      }
+    }
+    favoriteArray={
+      Array [
+        Object {
+          "movie_id": 399055,
+          "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+          "poster_path": "https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg",
+          "release_date": "2017-12-08",
+          "title": "The Shape of Water",
+          "vote_average": 7.4,
+          "vote_count": 794,
+        },
+        Object {
+          "movie_id": 284054,
+          "overview": "T'Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.",
+          "poster_path": "https://image.tmdb.org/t/p/w500//bLBUCtMQGJclH36clliPLmljMys.jpg",
+          "release_date": "2018-02-13",
+          "title": "Black Panther",
+          "vote_average": 5,
+          "vote_count": 72,
+        },
+      ]
+    }
+    movieArray={
+      Array [
+        Object {
+          "movie_id": 399055,
+          "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+          "poster_path": "https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg",
+          "release_date": "2017-12-08",
+          "title": "The Shape of Water",
+          "vote_average": 7.4,
+          "vote_count": 794,
+        },
+        Object {
+          "movie_id": 284054,
+          "overview": "T'Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.",
+          "poster_path": "https://image.tmdb.org/t/p/w500//bLBUCtMQGJclH36clliPLmljMys.jpg",
+          "release_date": "2018-02-13",
+          "title": "Black Panther",
+          "vote_average": 5,
+          "vote_count": 72,
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <Card
+          addClass="favorited"
+          handleFavorite={[Function]}
+          id={399055}
+          movie={
+            Object {
+              "movie_id": 399055,
+              "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+              "poster_path": "https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg",
+              "release_date": "2017-12-08",
+              "title": "The Shape of Water",
+              "vote_average": 7.4,
+              "vote_count": 794,
+            }
+          }
+        />,
+        <Card
+          addClass="favorited"
+          handleFavorite={[Function]}
+          id={284054}
+          movie={
+            Object {
+              "movie_id": 284054,
+              "overview": "T'Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.",
+              "poster_path": "https://image.tmdb.org/t/p/w500//bLBUCtMQGJclH36clliPLmljMys.jpg",
+              "release_date": "2018-02-13",
+              "title": "Black Panther",
+              "vote_average": 5,
+              "vote_count": 72,
+            }
+          }
+        />,
+      ],
+      "className": "MovieContainer",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "399055",
+        "nodeType": "function",
+        "props": Object {
+          "addClass": "favorited",
+          "handleFavorite": [Function],
+          "id": 399055,
+          "movie": Object {
+            "movie_id": 399055,
+            "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+            "poster_path": "https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg",
+            "release_date": "2017-12-08",
+            "title": "The Shape of Water",
+            "vote_average": 7.4,
+            "vote_count": 794,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "284054",
+        "nodeType": "function",
+        "props": Object {
+          "addClass": "favorited",
+          "handleFavorite": [Function],
+          "id": 284054,
+          "movie": Object {
+            "movie_id": 284054,
+            "overview": "T'Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.",
+            "poster_path": "https://image.tmdb.org/t/p/w500//bLBUCtMQGJclH36clliPLmljMys.jpg",
+            "release_date": "2018-02-13",
+            "title": "Black Panther",
+            "vote_average": 5,
+            "vote_count": 72,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <Card
+            addClass="favorited"
+            handleFavorite={[Function]}
+            id={399055}
+            movie={
+              Object {
+                "movie_id": 399055,
+                "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+                "poster_path": "https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg",
+                "release_date": "2017-12-08",
+                "title": "The Shape of Water",
+                "vote_average": 7.4,
+                "vote_count": 794,
+              }
+            }
+          />,
+          <Card
+            addClass="favorited"
+            handleFavorite={[Function]}
+            id={284054}
+            movie={
+              Object {
+                "movie_id": 284054,
+                "overview": "T'Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.",
+                "poster_path": "https://image.tmdb.org/t/p/w500//bLBUCtMQGJclH36clliPLmljMys.jpg",
+                "release_date": "2018-02-13",
+                "title": "Black Panther",
+                "vote_average": 5,
+                "vote_count": 72,
+              }
+            }
+          />,
+        ],
+        "className": "MovieContainer",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "399055",
+          "nodeType": "function",
+          "props": Object {
+            "addClass": "favorited",
+            "handleFavorite": [Function],
+            "id": 399055,
+            "movie": Object {
+              "movie_id": 399055,
+              "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+              "poster_path": "https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg",
+              "release_date": "2017-12-08",
+              "title": "The Shape of Water",
+              "vote_average": 7.4,
+              "vote_count": 794,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "284054",
+          "nodeType": "function",
+          "props": Object {
+            "addClass": "favorited",
+            "handleFavorite": [Function],
+            "id": 284054,
+            "movie": Object {
+              "movie_id": 284054,
+              "overview": "T'Challa, the new ruler of the advanced kingdom of Wakanda, must defend his land from being torn apart by enemies from outside and inside the country.",
+              "poster_path": "https://image.tmdb.org/t/p/w500//bLBUCtMQGJclH36clliPLmljMys.jpg",
+              "release_date": "2018-02-13",
+              "title": "Black Panther",
+              "vote_average": 5,
+              "vote_count": 72,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

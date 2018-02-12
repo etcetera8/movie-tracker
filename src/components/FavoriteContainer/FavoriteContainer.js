@@ -3,34 +3,30 @@ import Card from '../Card/Card';
 import './FavoriteContainer.css';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getAllFavorites, deleteFavorite, addFavorite } from '../../api';
+import { deleteFavorite, addFavorite } from '../../api';
 import { addFavoriteAction } from '../../actions/actionIndex';
+import PropTypes from 'prop-types';
 
 export class FavoriteContainer extends Component {
 
   handleFavorite = async (movie) => {
     this.props.activeUser ? this.toggleFavorite(movie) : this.props.history.push('login')
   }
-  //need to grab favorites from store instead of fetch call
+
   toggleFavorite = async (movie) => {
-    const user_id = this.props.activeUser.id
-    const allFavs = await getAllFavorites(user_id);
-    const match = allFavs.data.filter(favMovie => favMovie.movie_id === movie.movie_id)
+    const { favoriteArray, activeUser } = this.props
+    const user_id = activeUser.id
+    const match = favoriteArray.filter(favMovie => favMovie.movie_id === movie.movie_id)
 
     movie.user_id = user_id;
 
     if (match.length > 0) {
-      const remaining = allFavs.data.filter(favMovie => favMovie.movie_id !== movie.movie_id)
+      const remaining = favoriteArray.filter(favMovie => favMovie.movie_id !== movie.movie_id)
       deleteFavorite(user_id, movie.movie_id ) 
       this.props.addFavorite(remaining)
     } else {
       addFavorite(movie)
     }
-  }
-
-  getFavorites = async () => {
-    const allFavs = await getAllFavorites(this.props.activeUser.id);
-    this.props.addFavorite(allFavs.data);
   }
 
   cardsArray () {
@@ -62,4 +58,10 @@ const mapDispatch = (dispatch) => ({
   addFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData)),
 })
 
-export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer))
+export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer));
+
+FavoriteContainer.propTypes = {
+  favoriteArray: PropTypes.array.isRequired,
+  activeUser: PropTypes.object.isRequired,
+  addFavorite: PropTypes.func.isRequired
+};

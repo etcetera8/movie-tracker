@@ -1,9 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import { App } from './App';
+import { shallow } from 'enzyme';
+import { cleanMovieArray, userData } from '../../mock-data.js';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+  let wrapper;
+  
+  beforeEach( () => {
+    wrapper = shallow(
+      <App
+        loginStatus={userData}
+      />);
+  });
+
+  it('should match the snapshot test', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should fetch moviedata when getInitalData is called on load', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      json: () => Promise.resolve(data)
+    }))
+
+    wrapper.instance().getInitialData()
+    wrapper.update()
+
+    expect(window.fetch).toHaveBeenCalled()
+  })
 });
