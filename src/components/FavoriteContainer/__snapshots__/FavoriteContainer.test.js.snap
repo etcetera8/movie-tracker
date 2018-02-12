@@ -35,6 +35,8 @@ ShallowWrapper {
         },
       ]
     }
+    sendFavorite={[MockFunction]}
+    toggleFavorite={[MockFunction]}
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

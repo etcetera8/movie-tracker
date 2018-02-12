@@ -23,7 +23,7 @@ export class FavoriteContainer extends Component {
     if (match.length > 0) {
       const remaining = favoriteArray.filter(favMovie => favMovie.movie_id !== movie.movie_id)
       deleteFavorite(user_id, movie.movie_id ) 
-      this.props.addFavorite(remaining)
+      this.props.sendFavorite(remaining)
     } else {
       addFavorite(movie)
     }
@@ -55,7 +55,7 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-  addFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData)),
+  sendFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData)),
 })
 
 export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer));
@@ -63,5 +63,5 @@ export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer));
 FavoriteContainer.propTypes = {
   favoriteArray: PropTypes.array.isRequired,
   activeUser: PropTypes.object.isRequired,
-  addFavorite: PropTypes.func.isRequired
+  sendFavorite: PropTypes.func.isRequired
 };

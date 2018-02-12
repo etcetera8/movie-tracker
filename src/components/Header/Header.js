@@ -5,7 +5,7 @@ import { logoutUser } from '../../actions/actionIndex';
 import PropTypes from 'prop-types';
 import './Header.css'
 
-const Header = ({loginStatus, logoutUser}) => {
+export const Header = ({loginStatus, logoutUser}) => {
   const signOut = async () => {
     await logoutUser(false);
   }
@@ -35,7 +35,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Header.propTypes = {
-  logoutUser: PropTypes.func.isRequired
+  logoutUser: PropTypes.func
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

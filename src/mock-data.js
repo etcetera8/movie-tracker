@@ -43,6 +43,7 @@ export const dirtyMovieObject = { results: [
 ]}
 
 export const oneMovie = {
+  movie_id: 284054,
   title: 'Coco',
   vote_average: 7.7,
   vote_count: 1987,
@@ -55,4 +56,16 @@ export const userData = {
   name: 'brophus park',
   email: 'bros@gmail.com',
   password: 'pass',
+}
+
+export const movieRawData = {
+  data: {
+      movie_id: 399055,
+      title: 'The Shape of Water',
+      vote_average: 7.4,
+      vote_count: 794,
+      overview: 'An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.',
+      release_date: '2017-12-08',
+      poster_path: 'https://image.tmdb.org/t/p/w500//iLYLADGA5oKGM92Ns1j9CDgk3iI.jpg'
+    }
 }

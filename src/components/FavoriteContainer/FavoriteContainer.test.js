@@ -1,7 +1,7 @@
 import React from 'react';
 import { FavoriteContainer } from './FavoriteContainer';
 import { shallow, mount } from 'enzyme';
-import { cleanMovieArray, userData } from '../../mock-data.js';
+import { cleanMovieArray, userData, oneMovie } from '../../mock-data.js';
 
 describe('FavoriteContainer', () => {
   let wrapper;
@@ -12,6 +12,8 @@ describe('FavoriteContainer', () => {
       <FavoriteContainer 
         favoriteArray={cleanMovieArray}
         activeUser={userData}
+        toggleFavorite={mockFunction}
+        sendFavorite={mockFunction}
       />);
   });
 
@@ -19,33 +21,11 @@ describe('FavoriteContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should make a fetch call when toggleFavorite is called', () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve(data)
-    }))
-
-    wrapper.instance().handleFavorite()
+  it('should call toggleFavorite when handleFavorite is called', () => {
+    wrapper.instance().handleFavorite(oneMovie)
     wrapper.update()
-    toggleFavorite = jest.fn()
-    //handleFavorite = jest.fn()
-    //console.log(wrapper.instance())
-    expect(wrapper.instance().toggleFavorite).toHaveBeenCalled()
+
+    expect(mockFunction).toHaveBeenCalled()
   })
-
-  // it('should call handleFavorite when favorite button is clicked', async () => {
-  //   wrapper = mount(
-  //     <FavoriteContainer 
-  //       favoriteArray={cleanMovieArray}
-  //       activeUser={userData}
-  //     />);
-  //   console.log(wrapper.debug())
-  //   const instance = wrapper.instance()
-
-  //   instance.handleFavorite = jest.fn()
-  //   await wrapper.find('.favorite-btn').first().simulate('click', () => {handleFavorite()})
-  //   wrapper.update()
-
-  //   expect(instance.handleFavorite).toHaveBeenCalled()
-  // })
 });
 
