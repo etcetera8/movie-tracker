@@ -27,14 +27,20 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <h3
+          className="login-prompt"
+        >
+          Already Have An Account? Login Here:
+        </h3>,
         <form
+          className="login-form"
           type="submit"
         >
           <input
             className=""
             name="username"
             onChange={[Function]}
-            placeholder="User Name or E-mail"
+            placeholder="E-mail"
             type="text"
             value=""
           />
@@ -47,17 +53,31 @@ ShallowWrapper {
             value=""
           />
           <button
+            className="login-btn"
             onClick={[Function]}
             type="submit"
           >
-            login
+            Login
           </button>
         </form>,
         <Connect(SignUp) />,
       ],
+      "className": "Login",
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Already Have An Account? Login Here:",
+          "className": "login-prompt",
+        },
+        "ref": null,
+        "rendered": "Already Have An Account? Login Here:",
+        "type": "h3",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -68,7 +88,7 @@ ShallowWrapper {
               className=""
               name="username"
               onChange={[Function]}
-              placeholder="User Name or E-mail"
+              placeholder="E-mail"
               type="text"
               value=""
             />,
@@ -81,13 +101,15 @@ ShallowWrapper {
               value=""
             />,
             <button
+              className="login-btn"
               onClick={[Function]}
               type="submit"
             >
-              login
+              Login
             </button>,
             false,
           ],
+          "className": "login-form",
           "type": "submit",
         },
         "ref": null,
@@ -100,7 +122,7 @@ ShallowWrapper {
               "className": "",
               "name": "username",
               "onChange": [Function],
-              "placeholder": "User Name or E-mail",
+              "placeholder": "E-mail",
               "type": "text",
               "value": "",
             },
@@ -129,12 +151,13 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "login",
+              "children": "Login",
+              "className": "login-btn",
               "onClick": [Function],
               "type": "submit",
             },
             "ref": null,
-            "rendered": "login",
+            "rendered": "Login",
             "type": "button",
           },
           false,
@@ -160,14 +183,20 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <h3
+            className="login-prompt"
+          >
+            Already Have An Account? Login Here:
+          </h3>,
           <form
+            className="login-form"
             type="submit"
           >
             <input
               className=""
               name="username"
               onChange={[Function]}
-              placeholder="User Name or E-mail"
+              placeholder="E-mail"
               type="text"
               value=""
             />
@@ -180,17 +209,31 @@ ShallowWrapper {
               value=""
             />
             <button
+              className="login-btn"
               onClick={[Function]}
               type="submit"
             >
-              login
+              Login
             </button>
           </form>,
           <Connect(SignUp) />,
         ],
+        "className": "Login",
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Already Have An Account? Login Here:",
+            "className": "login-prompt",
+          },
+          "ref": null,
+          "rendered": "Already Have An Account? Login Here:",
+          "type": "h3",
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -201,7 +244,7 @@ ShallowWrapper {
                 className=""
                 name="username"
                 onChange={[Function]}
-                placeholder="User Name or E-mail"
+                placeholder="E-mail"
                 type="text"
                 value=""
               />,
@@ -214,13 +257,15 @@ ShallowWrapper {
                 value=""
               />,
               <button
+                className="login-btn"
                 onClick={[Function]}
                 type="submit"
               >
-                login
+                Login
               </button>,
               false,
             ],
+            "className": "login-form",
             "type": "submit",
           },
           "ref": null,
@@ -233,7 +278,7 @@ ShallowWrapper {
                 "className": "",
                 "name": "username",
                 "onChange": [Function],
-                "placeholder": "User Name or E-mail",
+                "placeholder": "E-mail",
                 "type": "text",
                 "value": "",
               },
@@ -262,12 +307,13 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "login",
+                "children": "Login",
+                "className": "login-btn",
                 "onClick": [Function],
                 "type": "submit",
               },
               "ref": null,
-              "rendered": "login",
+              "rendered": "Login",
               "type": "button",
             },
             false,

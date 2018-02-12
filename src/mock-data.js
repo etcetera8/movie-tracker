@@ -1,4 +1,5 @@
- export const cleanMovieArray = [
+/* eslint-disable */
+export const cleanMovieArray = [
     {
       movie_id: 399055,
       title: 'The Shape of Water',

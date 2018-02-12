@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { cleanMovieData } from './cleaner.js'
 import { cleanMovieArray, dirtyMovieObject } from './mock-data.js'
 

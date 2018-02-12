@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import { FavoriteContainer } from './FavoriteContainer';
 import { shallow, mount } from 'enzyme';

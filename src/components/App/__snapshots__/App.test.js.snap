@@ -30,6 +30,7 @@ ShallowWrapper {
         <Connect(Header) />,
         <withRouter(Connect(Component)) />,
       ],
+      "className": "App",
     },
     "ref": null,
     "rendered": Array [
@@ -64,6 +65,7 @@ ShallowWrapper {
           <Connect(Header) />,
           <withRouter(Connect(Component)) />,
         ],
+        "className": "App",
       },
       "ref": null,
       "rendered": Array [
