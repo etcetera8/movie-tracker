@@ -4,7 +4,9 @@ import { withRouter } from 'react-router-dom';
 import { cleanMovieData } from '../../cleaner';
 import { apiMovieData } from '../../api';
 import { addMovieData } from '../../actions/actionIndex';
+import './App.css';
 import PropTypes from 'prop-types';
+
 
 //components:
 import Header from '../Header/Header';
@@ -26,7 +28,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="App">
         <Header />
         <Main />
       </div>

@@ -47,8 +47,9 @@ export class SignUp extends Component {
 
   render () {
     return (
-      <div>
-        <form type="submit">
+      <div className="signup">
+        <h3 className="signup-prompt">New to MovieTracker? Sign-up for an account here:</h3>
+        <form type="submit" className="signup-form">
           <input
             value={this.state.name}
             onChange={this.handleChange}
@@ -72,13 +73,14 @@ export class SignUp extends Component {
             placeholder="Enter your password"
           />
           <button
+            className="signup-btn"
             type="submit"
             onClick={this.handleSignUp}>
             Sign Up
           </button>
         </form>
-       
-       { this.state.errorStatus && 
+
+       { this.state.errorStatus &&
         <p className="login-error">Sorry, an account with this e-mail already exists</p>
        }
       </div>
