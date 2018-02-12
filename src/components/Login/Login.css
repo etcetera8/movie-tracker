@@ -2,3 +2,36 @@
   border: 1px solid red;
 }
 
+.Login {
+  background: linear-gradient(#336E7B, #000000);
+  min-height: 100vh;
+  padding: 3em 0;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-prompt {
+  align-self: center;
+  padding: 0.5em;
+  color: #ffffff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 30%;
+  padding-bottom: 2em;
+}
+
+.login-btn {
+  border: none;
+  border-style: none;
+}
+
+.login-btn:hover {
+  background: #000000;
+  color: #e3be42;
+  border: none;
+}

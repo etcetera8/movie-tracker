@@ -44,13 +44,14 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form type="submit">
+      <div className="Login">
+        <h3 className="login-prompt">Already Have An Account? Login Here:</h3>
+        <form type="submit" className="login-form">
           <input
             className={!this.state.errorStatus ? "" : "error"}
             name="username"
             type='text'
-            placeholder="User Name or E-mail"
+            placeholder="E-mail"
             value={this.state.username}
             onChange={this.handleChange}
             />
@@ -63,8 +64,9 @@ class Login extends Component {
             onChange={this.handleChange}
             />
           <button
+            className="login-btn"
             onClick={this.handleLoginAttempt}
-            type="submit">login
+            type="submit">Login
           </button>
           {this.state.errorStatus && 
             <span className="login-error">E-mail or password do not match, try again</span>

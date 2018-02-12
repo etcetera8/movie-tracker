@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html {
   background: #000000;
 }
 
 body {
+  min-width: 100%;
+  min-height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.App {
   min-width: 100%;
   min-height: 100%;
   padding: 0px;
