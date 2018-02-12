@@ -50,6 +50,7 @@ ShallowWrapper {
             Sign Up
           </button>
         </form>,
+        "n",
         false,
       ],
     },
@@ -156,6 +157,7 @@ ShallowWrapper {
         ],
         "type": "form",
       },
+      "n",
       false,
     ],
     "type": "div",
@@ -199,6 +201,7 @@ ShallowWrapper {
               Sign Up
             </button>
           </form>,
+          "n",
           false,
         ],
       },
@@ -305,6 +308,7 @@ ShallowWrapper {
           ],
           "type": "form",
         },
+        "n",
         false,
       ],
       "type": "div",

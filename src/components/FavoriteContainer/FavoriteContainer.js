@@ -3,8 +3,9 @@ import Card from '../Card/Card';
 import './FavoriteContainer.css';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getAllFavorites, deleteFavorite, addFavorite } from '../../api';
+import { deleteFavorite, addFavorite } from '../../api';
 import { addFavoriteAction } from '../../actions/actionIndex';
+import PropTypes from 'prop-types';
 
 export class FavoriteContainer extends Component {
 
@@ -13,8 +14,8 @@ export class FavoriteContainer extends Component {
   }
 
   toggleFavorite = async (movie) => {
-    const { favoriteArray } = this.props
-    const user_id = this.props.activeUser.id
+    const { favoriteArray, activeUser } = this.props
+    const user_id = activeUser.id
     const match = favoriteArray.filter(favMovie => favMovie.movie_id === movie.movie_id)
 
     movie.user_id = user_id;
@@ -57,4 +58,10 @@ const mapDispatch = (dispatch) => ({
   addFavorite: (favoriteData) => dispatch(addFavoriteAction(favoriteData)),
 })
 
-export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer))
+export default withRouter(connect(mapState, mapDispatch)(FavoriteContainer));
+
+FavoriteContainer.propTypes = {
+  favoriteArray: PropTypes.array.isRequired,
+  activeUser: PropTypes.object.isRequired,
+  addFavorite: PropTypes.func.isRequired
+};

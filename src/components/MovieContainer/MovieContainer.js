@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addFavorite, getAllFavorites, deleteFavorite } from '../../api';
 import { addFavoriteAction } from '../../actions/actionIndex';
 import './MovieContainer.css';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card';
 
 export class MovieContainer extends Component {
@@ -78,3 +79,9 @@ const mapDispatch = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatch)(MovieContainer)
+
+MovieContainer.propTypes = {
+  favoriteArray: PropTypes.array.isRequired,
+  activeUser: PropTypes.object,
+  addFavorite: PropTypes.func.isRequired
+};
