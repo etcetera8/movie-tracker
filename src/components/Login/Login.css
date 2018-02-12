@@ -2,6 +2,10 @@
   border: 1px solid red;
 }
 
+.login-error {
+  margin: 0 auto;
+}
+
 .Login {
   background: linear-gradient(#336E7B, #000000);
   min-height: 100vh;
@@ -21,6 +25,8 @@
   display: flex;
   flex-direction: column;
   align-self: center;
+  align-content: center;
+  justify-content: space-around;
   width: 30%;
   padding-bottom: 2em;
 }
@@ -34,4 +40,20 @@
   background: #000000;
   color: #e3be42;
   border: none;
+}
+
+input {
+  box-sizing: border-box;
+  min-width: 50px;
+  max-width: 200px;
+  margin: 10px;
+}
+
+button {
+  box-sizing: border-box;
+  height: 20px;
+  padding:0;
+  margin:10px;
+  min-width: 50px;
+  max-width: 200px;
 }

@@ -12,14 +12,16 @@ const Header = ({loginStatus, logoutUser}) => {
 
   return(
     <header>
+    <div className="nav-container">
+      <NavLink className="nav" to="/login">Login/Sign-up</NavLink>
+    </div>
       <NavLink to="/"><h1>Movie Tracker</h1></NavLink>
-      <NavLink className="nav" to="/login">Login</NavLink>
-      <NavLink to="/favorites"><button>Show Favorites</button></NavLink>
       {
         loginStatus &&
-        <div>
+        <div className="signed-in">
+          <NavLink to="/favorites"><button>Show Favorites</button></NavLink>
+          <span className="welcome">Welcome, {loginStatus.name}</span>
           <button onClick={signOut}>Sign Out</button>
-          <h2>Welcome {loginStatus.name}</h2>
         </div>
       }
     </header>

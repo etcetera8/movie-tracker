@@ -1,16 +1,60 @@
 @import url('https://fonts.googleapis.com/css?family=Fugaz+One');
 
-header h1 {
-  margin: 10px auto;
-  font-family: 'Fugaz One', cursive;
-  color: white;
-  text-align: center;
-  font-size: 3em;
-}
-
 header {
   background-image: url('../../assets/header-lights.jpg');
   background-size: cover;
-  height: 130px;
-  padding: 50px;
+  text-align: center;
+  height: 150px;
+  padding: 10px; 
+}
+
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+header h1 {
+  margin: 10px auto;
+  max-width: 500px;
+  font-family: 'Fugaz One', cursive;
+  color: #fff;
+  text-align: center;
+  font-size: 3em;
+  text-decoration: none !important;
+}
+
+header button {
+  color: #fff;
+  height: 35px;
+  border: 2px solid #fff;
+  background: none;
+  transition: border-color, color .5s;
+}
+
+header button:hover {
+  color: yellow;
+  border-color: yellow;
+}
+
+.welcome {
+  color: #fff;
+  margin-right: 15px;
+}
+
+.nav {
+  color: #fff;
+  transition: color .5s;
+}
+
+.nav:hover {
+  color: yellow;
+}
+
+.signed-in {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
 }

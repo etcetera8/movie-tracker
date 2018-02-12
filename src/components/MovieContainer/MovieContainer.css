@@ -4,7 +4,7 @@
   justify-content: space-around;
   overflow-x: auto;
   overflow-y: hidden;
-  background: linear-gradient(#336E7B, black);
+  background: linear-gradient(rgba(15,15,15,0.9), #337E7B);
   -webkit-perspective: 1000;
   -moz-perspective: 1000;
   -o-perspective: 1000;
