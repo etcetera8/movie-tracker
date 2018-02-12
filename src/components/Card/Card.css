@@ -30,6 +30,11 @@
   transform: rotateY(180deg);
 }
 
+.movie-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
 .MovieCard-front,
 .MovieCard-back {
   -webkit-backface-visibility: hidden;
@@ -62,12 +67,13 @@ img {
 
 .favorite-btn {
   background: #000000;
-  display: flex;
+  -ms-flex-item-align: center;
   align-self: center;
-  border: none;
   opacity: 0.25;
   color: #ffffff;
-  padding: 0.75em 1em;
+  height: 45px;
+  width: 40px;
+  border-radius: 10px;
 }
 
 .favorite-btn:hover {
