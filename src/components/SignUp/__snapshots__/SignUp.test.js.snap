@@ -18,7 +18,13 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <h3
+          className="signup-prompt"
+        >
+          New to MovieTracker? Sign-up for an account here:
+        </h3>,
         <form
+          className="signup-form"
           type="submit"
         >
           <input
@@ -44,18 +50,31 @@ ShallowWrapper {
             value=""
           />
           <button
+            className="signup-btn"
             onClick={[Function]}
             type="submit"
           >
             Sign Up
           </button>
         </form>,
-        "n",
         false,
       ],
+      "className": "signup",
     },
     "ref": null,
     "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "New to MovieTracker? Sign-up for an account here:",
+          "className": "signup-prompt",
+        },
+        "ref": null,
+        "rendered": "New to MovieTracker? Sign-up for an account here:",
+        "type": "h3",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -85,12 +104,14 @@ ShallowWrapper {
               value=""
             />,
             <button
+              className="signup-btn"
               onClick={[Function]}
               type="submit"
             >
               Sign Up
             </button>,
           ],
+          "className": "signup-form",
           "type": "submit",
         },
         "ref": null,
@@ -147,6 +168,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "children": "Sign Up",
+              "className": "signup-btn",
               "onClick": [Function],
               "type": "submit",
             },
@@ -157,7 +179,6 @@ ShallowWrapper {
         ],
         "type": "form",
       },
-      "n",
       false,
     ],
     "type": "div",
@@ -169,7 +190,13 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <h3
+            className="signup-prompt"
+          >
+            New to MovieTracker? Sign-up for an account here:
+          </h3>,
           <form
+            className="signup-form"
             type="submit"
           >
             <input
@@ -195,18 +222,31 @@ ShallowWrapper {
               value=""
             />
             <button
+              className="signup-btn"
               onClick={[Function]}
               type="submit"
             >
               Sign Up
             </button>
           </form>,
-          "n",
           false,
         ],
+        "className": "signup",
       },
       "ref": null,
       "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "New to MovieTracker? Sign-up for an account here:",
+            "className": "signup-prompt",
+          },
+          "ref": null,
+          "rendered": "New to MovieTracker? Sign-up for an account here:",
+          "type": "h3",
+        },
         Object {
           "instance": null,
           "key": undefined,
@@ -236,12 +276,14 @@ ShallowWrapper {
                 value=""
               />,
               <button
+                className="signup-btn"
                 onClick={[Function]}
                 type="submit"
               >
                 Sign Up
               </button>,
             ],
+            "className": "signup-form",
             "type": "submit",
           },
           "ref": null,
@@ -298,6 +340,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": "Sign Up",
+                "className": "signup-btn",
                 "onClick": [Function],
                 "type": "submit",
               },
@@ -308,7 +351,6 @@ ShallowWrapper {
           ],
           "type": "form",
         },
-        "n",
         false,
       ],
       "type": "div",

@@ -32,209 +32,15 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <div
-          className="MovieCard-front"
+          className="MovieCard-flipper"
         >
-          <button
-            className="favorite-btn"
-            onClick={[Function]}
-          >
-            FAVORITE
-          </button>
-          <img
-            src={undefined}
-          />
-        </div>,
-        <div
-          className="MovieCard-back"
-        >
-          <h1
-            className="movie-title"
-          >
-            Coco
-          </h1>
-          <p
-            className="movie-overview"
-          >
-            Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
-          </p>
-          <h4>
-            Vote Average: 
-            7.7
-          </h4>
-          <h4>
-            Votes :
-            1987
-          </h4>
-        </div>,
-      ],
-      "className": "MovieCard function () {
-        return fn.apply(this, arguments);
-      }",
-      "id": 5123,
-      "ontouchstart": "this.classList.toggle('hover')",
-    },
-    "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <button
-              className="favorite-btn"
-              onClick={[Function]}
-            >
-              FAVORITE
-            </button>,
-            <img
-              src={undefined}
-            />,
-          ],
-          "className": "MovieCard-front",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "FAVORITE",
-              "className": "favorite-btn",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "FAVORITE",
-            "type": "button",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "src": undefined,
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "img",
-          },
-        ],
-        "type": "div",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <h1
-              className="movie-title"
-            >
-              Coco
-            </h1>,
-            <p
-              className="movie-overview"
-            >
-              Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
-            </p>,
-            <h4>
-              Vote Average: 
-              7.7
-            </h4>,
-            <h4>
-              Votes :
-              1987
-            </h4>,
-          ],
-          "className": "MovieCard-back",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Coco",
-              "className": "movie-title",
-            },
-            "ref": null,
-            "rendered": "Coco",
-            "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
-              "className": "movie-overview",
-            },
-            "ref": null,
-            "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
-            "type": "p",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Vote Average: ",
-                7.7,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Vote Average: ",
-              7.7,
-            ],
-            "type": "h4",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": Array [
-                "Votes :",
-                1987,
-              ],
-            },
-            "ref": null,
-            "rendered": Array [
-              "Votes :",
-              1987,
-            ],
-            "type": "h4",
-          },
-        ],
-        "type": "div",
-      },
-    ],
-    "type": "article",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
           <div
             className="MovieCard-front"
           >
-            <button
-              className="favorite-btn"
-              onClick={[Function]}
-            >
-              FAVORITE
-            </button>
             <img
               src={undefined}
             />
-          </div>,
+          </div>
           <div
             className="MovieCard-back"
           >
@@ -256,50 +62,104 @@ ShallowWrapper {
               Votes :
               1987
             </h4>
-          </div>,
-        ],
-        "className": "MovieCard function () {
+          </div>
+        </div>,
+        <button
+          className="favorite-btn function () {
+        return fn.apply(this, arguments);
+      }"
+          onClick={[Function]}
+        >
+          <FontAwesomeIcon$1
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f164",
+                  "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+                ],
+                "iconName": "thumbs-up",
+                "prefix": "fas",
+              }
+            }
+            listItem={false}
+            mask={null}
+            name=""
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size="2x"
+            spin={false}
+            symbol={false}
+            transform={null}
+          />
+        </button>,
+      ],
+      "className": "MovieCard function () {
         return fn.apply(this, arguments);
       }",
-        "id": 5123,
-        "ontouchstart": "this.classList.toggle('hover')",
-      },
-      "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <button
-                className="favorite-btn"
-                onClick={[Function]}
-              >
-                FAVORITE
-              </button>,
+      "id": 5123,
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="MovieCard-front"
+            >
               <img
                 src={undefined}
+              />
+            </div>,
+            <div
+              className="MovieCard-back"
+            >
+              <h1
+                className="movie-title"
+              >
+                Coco
+              </h1>
+              <p
+                className="movie-overview"
+              >
+                Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+              </p>
+              <h4>
+                Vote Average: 
+                7.7
+              </h4>
+              <h4>
+                Votes :
+                1987
+              </h4>
+            </div>,
+          ],
+          "className": "MovieCard-flipper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": <img
+                src={undefined}
               />,
-            ],
-            "className": "MovieCard-front",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "FAVORITE",
-                "className": "favorite-btn",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "FAVORITE",
-              "type": "button",
+              "className": "MovieCard-front",
             },
-            Object {
+            "ref": null,
+            "rendered": Object {
               "instance": null,
               "key": undefined,
               "nodeType": "host",
@@ -310,35 +170,302 @@ ShallowWrapper {
               "rendered": null,
               "type": "img",
             },
-          ],
-          "type": "div",
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h1
+                  className="movie-title"
+                >
+                  Coco
+                </h1>,
+                <p
+                  className="movie-overview"
+                >
+                  Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+                </p>,
+                <h4>
+                  Vote Average: 
+                  7.7
+                </h4>,
+                <h4>
+                  Votes :
+                  1987
+                </h4>,
+              ],
+              "className": "MovieCard-back",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Coco",
+                  "className": "movie-title",
+                },
+                "ref": null,
+                "rendered": "Coco",
+                "type": "h1",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                  "className": "movie-overview",
+                },
+                "ref": null,
+                "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Vote Average: ",
+                    7.7,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Vote Average: ",
+                  7.7,
+                ],
+                "type": "h4",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Votes :",
+                    1987,
+                  ],
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Votes :",
+                  1987,
+                ],
+                "type": "h4",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <FontAwesomeIcon$1
+            border={false}
+            className=""
+            fixedWidth={false}
+            flip={null}
+            icon={
+              Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f164",
+                  "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+                ],
+                "iconName": "thumbs-up",
+                "prefix": "fas",
+              }
+            }
+            listItem={false}
+            mask={null}
+            name=""
+            pull={null}
+            pulse={false}
+            rotation={null}
+            size="2x"
+            spin={false}
+            symbol={false}
+            transform={null}
+          />,
+          "className": "favorite-btn function () {
+        return fn.apply(this, arguments);
+      }",
+          "onClick": [Function],
         },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "border": false,
+            "className": "",
+            "fixedWidth": false,
+            "flip": null,
+            "icon": Object {
+              "icon": Array [
+                512,
+                512,
+                Array [],
+                "f164",
+                "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+              ],
+              "iconName": "thumbs-up",
+              "prefix": "fas",
+            },
+            "listItem": false,
+            "mask": null,
+            "name": "",
+            "pull": null,
+            "pulse": false,
+            "rotation": null,
+            "size": "2x",
+            "spin": false,
+            "symbol": false,
+            "transform": null,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "button",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="MovieCard-flipper"
+          >
+            <div
+              className="MovieCard-front"
+            >
+              <img
+                src={undefined}
+              />
+            </div>
+            <div
+              className="MovieCard-back"
+            >
+              <h1
+                className="movie-title"
+              >
+                Coco
+              </h1>
+              <p
+                className="movie-overview"
+              >
+                Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+              </p>
+              <h4>
+                Vote Average: 
+                7.7
+              </h4>
+              <h4>
+                Votes :
+                1987
+              </h4>
+            </div>
+          </div>,
+          <button
+            className="favorite-btn function () {
+        return fn.apply(this, arguments);
+      }"
+            onClick={[Function]}
+          >
+            <FontAwesomeIcon$1
+              border={false}
+              className=""
+              fixedWidth={false}
+              flip={null}
+              icon={
+                Object {
+                  "icon": Array [
+                    512,
+                    512,
+                    Array [],
+                    "f164",
+                    "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+                  ],
+                  "iconName": "thumbs-up",
+                  "prefix": "fas",
+                }
+              }
+              listItem={false}
+              mask={null}
+              name=""
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size="2x"
+              spin={false}
+              symbol={false}
+              transform={null}
+            />
+          </button>,
+        ],
+        "className": "MovieCard function () {
+        return fn.apply(this, arguments);
+      }",
+        "id": 5123,
+      },
+      "ref": null,
+      "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h1
-                className="movie-title"
+              <div
+                className="MovieCard-front"
               >
-                Coco
-              </h1>,
-              <p
-                className="movie-overview"
+                <img
+                  src={undefined}
+                />
+              </div>,
+              <div
+                className="MovieCard-back"
               >
-                Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
-              </p>,
-              <h4>
-                Vote Average: 
-                7.7
-              </h4>,
-              <h4>
-                Votes :
-                1987
-              </h4>,
+                <h1
+                  className="movie-title"
+                >
+                  Coco
+                </h1>
+                <p
+                  className="movie-overview"
+                >
+                  Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+                </p>
+                <h4>
+                  Vote Average: 
+                  7.7
+                </h4>
+                <h4>
+                  Votes :
+                  1987
+                </h4>
+              </div>,
             ],
-            "className": "MovieCard-back",
+            "className": "MovieCard-flipper",
           },
           "ref": null,
           "rendered": Array [
@@ -347,41 +474,24 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Coco",
-                "className": "movie-title",
+                "children": <img
+                  src={undefined}
+                />,
+                "className": "MovieCard-front",
               },
               "ref": null,
-              "rendered": "Coco",
-              "type": "h1",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
-                "className": "movie-overview",
+              "rendered": Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "src": undefined,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
               },
-              "ref": null,
-              "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
-              "type": "p",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": Array [
-                  "Vote Average: ",
-                  7.7,
-                ],
-              },
-              "ref": null,
-              "rendered": Array [
-                "Vote Average: ",
-                7.7,
-              ],
-              "type": "h4",
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -389,19 +499,169 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "children": Array [
-                  "Votes :",
-                  1987,
+                  <h1
+                    className="movie-title"
+                  >
+                    Coco
+                  </h1>,
+                  <p
+                    className="movie-overview"
+                  >
+                    Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.
+                  </p>,
+                  <h4>
+                    Vote Average: 
+                    7.7
+                  </h4>,
+                  <h4>
+                    Votes :
+                    1987
+                  </h4>,
                 ],
+                "className": "MovieCard-back",
               },
               "ref": null,
               "rendered": Array [
-                "Votes :",
-                1987,
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Coco",
+                    "className": "movie-title",
+                  },
+                  "ref": null,
+                  "rendered": "Coco",
+                  "type": "h1",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                    "className": "movie-overview",
+                  },
+                  "ref": null,
+                  "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                  "type": "p",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Vote Average: ",
+                      7.7,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Vote Average: ",
+                    7.7,
+                  ],
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      "Votes :",
+                      1987,
+                    ],
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    "Votes :",
+                    1987,
+                  ],
+                  "type": "h4",
+                },
               ],
-              "type": "h4",
+              "type": "div",
             },
           ],
           "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <FontAwesomeIcon$1
+              border={false}
+              className=""
+              fixedWidth={false}
+              flip={null}
+              icon={
+                Object {
+                  "icon": Array [
+                    512,
+                    512,
+                    Array [],
+                    "f164",
+                    "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+                  ],
+                  "iconName": "thumbs-up",
+                  "prefix": "fas",
+                }
+              }
+              listItem={false}
+              mask={null}
+              name=""
+              pull={null}
+              pulse={false}
+              rotation={null}
+              size="2x"
+              spin={false}
+              symbol={false}
+              transform={null}
+            />,
+            "className": "favorite-btn function () {
+        return fn.apply(this, arguments);
+      }",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "border": false,
+              "className": "",
+              "fixedWidth": false,
+              "flip": null,
+              "icon": Object {
+                "icon": Array [
+                  512,
+                  512,
+                  Array [],
+                  "f164",
+                  "M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z",
+                ],
+                "iconName": "thumbs-up",
+                "prefix": "fas",
+              },
+              "listItem": false,
+              "mask": null,
+              "name": "",
+              "pull": null,
+              "pulse": false,
+              "rotation": null,
+              "size": "2x",
+              "spin": false,
+              "symbol": false,
+              "transform": null,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          "type": "button",
         },
       ],
       "type": "article",

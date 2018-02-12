@@ -5,7 +5,7 @@ import { userData } from '../../mock-data.js';
 
 describe('Login', () => {
   let wrapper;
-  
+
   beforeEach( () => {
     wrapper = shallow(
       <Login
